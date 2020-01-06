@@ -1,430 +1,749 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
-  
-  <title>Juhaozero</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Juhaozero">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Juhaozero">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Juhaozero" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="juhaozero的博客">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="juhaozero的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>juhaozero的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Juhaozero</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Spring入门——AOP(面向切面，切什么面？" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%8C%E5%88%87%E4%BB%80%E4%B9%88%E9%9D%A2%EF%BC%9F/" class="article-date">
-  <time datetime="2020-01-05T11:03:28.283Z" itemprop="datePublished">2020-01-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%8C%E5%88%87%E4%BB%80%E4%B9%88%E9%9D%A2%EF%BC%9F/">Spring入门——AOP(面向切面，切什么面？</a>
-    </h1>
-  
 
-      </header>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">juhaozero的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SpringAOP"><a href="#SpringAOP" class="headerlink" title="SpringAOP"></a>SpringAOP</h1><p>了解SpringAOP之前，我们先要了解一些关于<strong>代理</strong>的概念</p>
-<h3 id="什么是代理"><a href="#什么是代理" class="headerlink" title="什么是代理"></a>什么是代理</h3><p>代理(Proxy)是一种<strong>设计模式</strong>,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:<strong>可以在目标对象实现的基础上,增强额外的功能操作,即扩展目标对象的功能</strong></p>
-<p>简单点说 就是在不修改代码的情况下，对原有的一些功能进行增强。举个例子，当我们想吃饭时，以前我们会买菜，做饭，而现在我们只需要在点餐App上下单即可，外卖小哥就会将饭菜打包到我们这里来，我们省去了买菜，做饭这些时间，转而由饭店为我们代劳（差不多就是这个意思）。</p>
-<h3 id="动态代理模式"><a href="#动态代理模式" class="headerlink" title="动态代理模式"></a>动态代理模式</h3><p><img src="https://img-blog.csdnimg.cn/20191208093533313.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>Java代理有三种</p>
-<ol>
-<li>静态代理 </li>
-<li>proxy类动态代理 </li>
-<li>cglib代理</li>
-</ol>
-<h1 id="proxy动态代理和cglib代理"><a href="#proxy动态代理和cglib代理" class="headerlink" title="proxy动态代理和cglib代理"></a>proxy动态代理和cglib代理</h1><h3 id="proxy实现动态代理"><a href="#proxy实现动态代理" class="headerlink" title="proxy实现动态代理"></a>proxy实现动态代理</h3><p>创建一个Service接口 并实现接口（<strong>Proxy要求被代理对象必须要实现接口</strong>）<br><img src="https://img-blog.csdnimg.cn/20191208093852764.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>proxy实现动态代理,实现打印日志<br><img src="https://img-blog.csdnimg.cn/20191208094045816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Poxy"><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208094903531.jpg" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191208094912218.jpg" alt="在这里插入图片描述"></p>
-<h3 id="cglib代理"><a href="#cglib代理" class="headerlink" title="cglib代理"></a>cglib代理</h3><p><strong>cglib代理模拟事务的开启和关闭</strong><br><img src="https://img-blog.csdnimg.cn/20191208095244801.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208095414381.jpg" alt="在这里插入图片描述"><br>proxy动态代理和cglib代理不同点在于<br><strong>==Poxy需要实现接口，cglib可以没有实现如何接口，只需要该类不是final修饰的即可==</strong></p>
-<p>代理模式差不多讲到这里，感兴趣的可以往深处了解<br>推荐阅读<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-proxy-pattern/index.html" target="_blank" rel="noopener">代理模式原理及实例讲解</a><br><a href="https://www.cnblogs.com/cenyu/p/6289209.html" target="_blank" rel="noopener">三种代理模式</a></p>
-<h3 id="Spring-AOP-简介"><a href="#Spring-AOP-简介" class="headerlink" title="Spring AOP 简介"></a>Spring AOP 简介</h3><p>如果说 SpringIOC 是 Spring 的核心，<br>那么SpringAOP即面向切面编程就是 Spring 最为重要的功能之一</p>
-<h5 id="什么是SpringAOP"><a href="#什么是SpringAOP" class="headerlink" title="什么是SpringAOP"></a>什么是SpringAOP</h5><p>所谓面向切面编程，就是我希望在目标对象（有无接口都可以）上扩展原有代码的功能，但可以在不修改源码的基础上来完成！，这听起来是不是有点耳熟，这不就是代理嘛！<br>SpringAOP是基于代理进行的。那什么是面向切面编程呢？？</p>
-<p>百度百科上是这样介绍的</p>
-<blockquote>
-<p>可以通过预编译方式和运行期动态代理实现在不修改源代码的情况下给程序动态统一添加功能的一种技术。AOP实际是GoF设计模式的延续，设计模式孜孜不倦追求的是调用者和被调用者之间的解耦,提高代码的灵活性和可扩展性，AOP可以说也是这种目标的一种实现。<br>    在Spring中提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
-</blockquote>
-<p>简单点说AOP实现了 ==通用的<strong>非核心</strong>业务逻辑，从<strong>核心</strong>业务逻辑中进行抽离==</p>
-<p>举个简单例子：如果我们要做日志的管理，那我们需要在每一行的业务代码上添加日志管理的代码，但这造成了代码之间的耦合，但如果有一天我们不需要日志管理这个业务，我们又需要往业务代码上注释日志管理的代码，这样显然是不够方便的，我们就可以利用AOP进行编程.</p>
-<h3 id="SpringAOP的概念"><a href="#SpringAOP的概念" class="headerlink" title="SpringAOP的概念"></a>SpringAOP的概念</h3><ol>
-<li>连接点（jointPoint）  被代理对象的所有方法，即被代理的类下的方法</li>
-<li>切入点（Poincut）被增强的方法就是切入点，即需要在哪个方法下添加其他业务逻辑</li>
-<li>通知（Advice） 增强的代码，即非核心业务逻辑</li>
-<li>切面（Apsect） 切面 = 通知+ 切入点</li>
-<li>目标对象（Target）被代理对象 </li>
-<li>代理对象 (Proxy) </li>
-</ol>
-<h3 id="Aop编程通知类型"><a href="#Aop编程通知类型" class="headerlink" title="Aop编程通知类型"></a>Aop编程通知类型</h3><p><strong>前置通知 (aop:before)</strong><br>在执行目标对象方法之前执行 </p>
-<p><strong>后置通知 (aop:after-returning)</strong><br>在执行目标对象方法之后执行 (异常不执行) </p>
-<p><strong>异常通知(aop:after-throwing)</strong><br>在执行目标对象方法里面发生异常时候执行 </p>
-<p><strong>最终通知（aop:after）</strong><br>在执行完目标对象方法后始终执行的方法就是最终通知(异常也执行) </p>
-<p><strong>环绕通知 (aop:around)</strong><br>自定义如何执行目标方法  </p>
-<p>了解了这几个概念后我们就可以来写我们的SpringAOP的第一个入门案例了</p>
-<h4 id="XMl实现SpringAOP"><a href="#XMl实现SpringAOP" class="headerlink" title="XMl实现SpringAOP"></a>XMl实现SpringAOP</h4><p>导入依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">     &lt;!--spring核心包--&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-context&lt;&#x2F;artifactId&gt;</span><br><span class="line">         &lt;version&gt;5.0.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">     &lt;&#x2F;dependency&gt;</span><br><span class="line">     &lt;!--springaop编程的相关依赖； aop, 切点表达式的依赖： aspectjweaver--&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-aop&lt;&#x2F;artifactId&gt;</span><br><span class="line">         &lt;version&gt;5.0.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">     &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">     &lt;!--切入点表达式--&gt;</span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.aspectj&lt;&#x2F;groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;aspectjweaver&lt;&#x2F;artifactId&gt;</span><br><span class="line">         &lt;version&gt;1.8.13&lt;&#x2F;version&gt;</span><br><span class="line">     &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;junit&lt;&#x2F;artifactId&gt;</span><br><span class="line">         &lt;version&gt;4.12&lt;&#x2F;version&gt;</span><br><span class="line">     &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">     &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-test&lt;&#x2F;artifactId&gt;</span><br><span class="line">         &lt;version&gt;5.0.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">     &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line"> &lt;&#x2F;dependencies&gt;</span><br></pre></td></tr></table></figure>
-<p>写一个Service<br><img src="https://img-blog.csdnimg.cn/20191208103853228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>写一个日志类，模拟事务的开启，关闭，回滚<br><img src="https://img-blog.csdnimg.cn/20191208103840400.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Log"></p>
-<p><img src="https://img-blog.csdnimg.cn/20191208104619402.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h3><p>在上面的案例中我们使用了切入点表达式<br>什么是切入点表达式呢?<br><strong>切入点表达式：（用于声明要在目标对象的哪些方法进行切入通知！！）</strong><br><img src="https://img-blog.csdnimg.cn/20191208105950588.jpg" alt="在这里插入图片描述"><br> execution( 修饰符 返回值类型 包路径.类名称.方法名称( 参数列表类型 )  )</p>
-<ol>
-<li>execution(): 表达式主体。  </li>
-<li>第一个*号：表示返回类型， *号表示所有的类型。</li>
-<li>包名：表示需要拦截的包名，后面的两个句点表示当前包和当前包的所有子包，com.shelock.service.impl.AccountServiceImpl下的包、子孙包下所有类的方法。</li>
-<li>第二个<em>号：表示类名，</em>号表示所有的类。</li>
-<li><em>(..):最后这个星号表示方法名，</em>号表示所有的方法，后面括弧里面表示方法的参数，两个句点表示任何参数。</li>
-</ol>
-<h3 id="通知类型"><a href="#通知类型" class="headerlink" title="通知类型"></a>通知类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:around&gt; &lt;!-- 环绕通知--&gt;</span><br><span class="line">&lt;aop:before&gt; &lt;!-- 前置通知--&gt;</span><br><span class="line">&lt;aop:after-returningr&gt; &lt;!-- 后置通知--&gt;</span><br><span class="line">&lt;aop:after&gt; &lt;!-- 最终通知--&gt;</span><br><span class="line">&lt;aop:after-throwing&gt; &lt;!--异常通知--&gt;</span><br></pre></td></tr></table></figure>
-<p>如果我们想在方法前面添加业务逻辑，我们就可以使用前置通知，其他同理。</p>
-<h4 id="注解实现SpringAOP"><a href="#注解实现SpringAOP" class="headerlink" title="注解实现SpringAOP"></a>注解实现SpringAOP</h4><p>Spring也提供了注解实现<br><strong>xml文件</strong></p>
-<p>需要在配置文件上开启注解扫描<br><img src="https://img-blog.csdnimg.cn/20191208111926122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"><br>配置切面类<br><img src="https://img-blog.csdnimg.cn/20191208112434501.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>同理<br>通知类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@After    &#x2F;&#x2F;最终通知</span><br><span class="line">@AfterReturning 	&#x2F;&#x2F;后置通知</span><br><span class="line">@AfterThrowing		&#x2F;&#x2F;异常通知</span><br><span class="line">@Before			&#x2F;&#x2F;前置通知</span><br></pre></td></tr></table></figure>
-
-
-<p>到这里关于SpringAOP就讲到这里了<br>有空在更！！！！</p>
-<p>如果文章有错的地方欢迎指正。</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><p><a href="https://juejin.im/post/5b06bf2df265da0de2574ee1" target="_blank" rel="noopener">Spring AOP就是这么简单啦</a><br><a href="https://blog.csdn.net/corbin_zhang/article/details/80576809" target="_blank" rel="noopener"><br>AspectJ的切入点表达式</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%8C%E5%88%87%E4%BB%80%E4%B9%88%E9%9D%A2%EF%BC%9F/" data-id="ck50x18440001dwg50ecu09rm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Spring入门——控制反转是什么鬼" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC/" class="article-date">
-  <time datetime="2020-01-05T08:11:12.911Z" itemprop="datePublished">2020-01-05</time>
-</a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </div>
-  <div class="article-inner">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
     
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC/">Spring入门——控制反转是什么鬼</a>
-    </h1>
-  
-
-      </header>
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近学了Spring 但一直没整理，趁着空档整理一下吧！</p>
-<p><strong>在正式开始Spring的学习前，我们先来认识几个概念</strong></p>
-<h3 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h3><p>Spring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！<br>为什么说Spring可以解决Java开发中的所有问题。</p>
-<p> <strong>1. 基于POJO轻量级和最小侵入式开发 通过依赖注入(DI)和面向接口实现松耦合。<br> 2.  基于切面和惯例进行声明式编程 通过切面和模板减少样板式代码。</strong></p>
-<p>Spring家族有哪些成员呢？<br>Spring家族常见的项目如下：<br>1）<strong>Spring  Framework (spring框架   IOC  AOP 事务管理，SpringMVC等)</strong><br>2）Spring Security（权限校验）  粗粒力度的权限校验， 细粒力度的权限校验<br>3）Spring  Data( 一统持久层天下  mysql，oracle，mongoDB，solr等 )<br>4）<strong>Spring Boot（简化Spring开发）</strong><br>5）<strong>Spring Cloud（分布式开发)</strong></p>
-<p>当然Spring家族成员不止这些，想了解更多关于Spring的家族成员 <a href="https://spring.io/" target="_blank" rel="noopener">点击这里</a></p>
-<h5 id="在没有Spring前我们是怎么样进行开发的"><a href="#在没有Spring前我们是怎么样进行开发的" class="headerlink" title="在没有Spring前我们是怎么样进行开发的"></a>在没有Spring前我们是怎么样进行开发的</h5><ol>
-<li>首先我们需要一个pojo（实体类对象）</li>
-<li>提供对应的接口 （dao）</li>
-<li>提供接口的实现类 </li>
-<li>提供对应的service  </li>
-<li>提供对应的controller</li>
-</ol>
-<h5 id="这种开发模式好吗？"><a href="#这种开发模式好吗？" class="headerlink" title="这种开发模式好吗？"></a>这种开发模式好吗？</h5><p>在这种情况下service层依赖于dao层，但如果我dao层下改变了那么service层下也要随之改变<br>同上 controller层改变service层也要随着改变。这造成了代码之间的<strong>耦合</strong>，修改起来不方便，<br>有没有解决的方法呢？</p>
-<p><strong>这时Spring的第一个家族成员Spring Framework 就出马了</strong></p>
-<h2 id="程序解耦-控制反转（IOC）"><a href="#程序解耦-控制反转（IOC）" class="headerlink" title="程序解耦-控制反转（IOC）"></a>程序解耦-控制反转（IOC）</h2><p>Spring （Framework）框架拥有7个核心模块，都是为JavaEE开发提供基础功能。<br><img src="https://img-blog.csdnimg.cn/20191207175647988.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Spring  Frameworkss"></p>
-<ol>
-<li><strong>Spring Core （IOC容器）：创建对象，给对象属性赋值</strong>  </li>
-<li><strong>Spring AOP（面向切面编程）： 事务管理，自定义AOP编程</strong>  </li>
-<li><strong>SpringMVC：Spring提供MVC表现层模块</strong></li>
-<li>Spring ORM ：Spring整合ORM框架（Hibernate/JPA）</li>
-<li>Spring JDBC : 提供JdbcTemplate的，对Jdbc简单封装 </li>
-<li>Spring Web： Spring整合Web（Servlet，Filter）</li>
-<li>Spring Context: 国际化，事件驱动编程</li>
-</ol>
-<p><strong>为了解决上面那个问题</strong><br><strong>Spring的核心思想之一：Inversion of Control ,  SpringIOC   诞生了</strong><br>    在以前创建对象都是由我们手动去new出来，现在把这个权利交给了spring的工厂</p>
-<p> <strong>1 把创建对象的权力，由自己创建(new)改为工厂（IOC容器）来创建</strong><br> <strong>2. 最终解决的是创建对象的耦合问题。</strong></p>
-<p>   多说无益，先敲代码，再来解释<br>    首先我们要使用Spring，必须导入Spring的依赖</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt; </span><br><span class="line">        &lt;!--spring的核心包--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">           &lt;!-- Junit测试--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-<p>编写实体类<br><img src="https://img-blog.csdnimg.cn/2019120718403359.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="User实体类"><br>编写applicationContext.xml 配置文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--配置创建user对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.shelock.entity.User"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>编写测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="comment">//1.得到spring 的容器 , 读取对应xml文件创建spring的容器。</span></span><br><span class="line">        ApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">      <span class="comment">//2. 通过容器获取到对应对象</span></span><br><span class="line">        User user = (User) applicationContext.getBean(<span class="string">"user"</span>);<span class="comment">//需为实体类的名称</span></span><br><span class="line">        <span class="comment">//3. 输出对象</span></span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191207184546205.jpg" alt="结果"></p>
-<p>这样我们的第一个SpringIOC入门案例就到此成功了</p>
-<p>此外Spring还提供了注解的方式创建对象</p>
-<ol>
-<li><p><strong>@Component    创建对象加入容器。一般用于工具类的注解。</strong></p>
-</li>
-<li><p><strong>@Controller： 创建对象加入容器。一般用于表现层的注解。</strong></p>
-</li>
-<li><p><strong>@Service： 创建对象加入容器。一般用于业务层的注解。</strong></p>
-</li>
-<li><p><strong>@Repository：创建对象加入容器。 一般用于持久层的注解</strong></p>
-<p>但要用到注解属性需要在配置文件中开启注解支持<br><img src="https://img-blog.csdnimg.cn/20191207202201127.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"></p>
-<h3 id="SpringIOC（控制反转）"><a href="#SpringIOC（控制反转）" class="headerlink" title="==SpringIOC（控制反转）=="></a>==SpringIOC（控制反转）==</h3><p>控制反转的思想最核心的地方在于，我们把创建对象的权力交给了Spring，由不使用资源的第三方Spring管理，这可以带来很多好处。<strong>第一，资源的集中管理。第二，降低了使用资源双方的依赖程度，也就是我们说的耦合度。</strong><br>也就是说创建对象会造成双方之间的依赖程度，那我不去创建对象，由Spring创建对象，Spring没有和我的业务层产生关系，只是作为一个容器，创建对象往Spring容器中放，使用对象往Spring中拿，通过Spring减少了对象之间的耦合。</p>
-</li>
-</ol>
-<h3 id="SpringIOC容器（Bean标签属性）"><a href="#SpringIOC容器（Bean标签属性）" class="headerlink" title="SpringIOC容器（Bean标签属性）"></a>SpringIOC容器（Bean标签属性）</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>id</td>
-<td>对象的引用名称 ；唯一值</td>
-</tr>
-<tr>
-<td>name</td>
-<td>对象的引用名称；name可以定义多个；相当于别名</td>
-</tr>
-<tr>
-<td>class</td>
-<td>类的全限名</td>
-</tr>
-<tr>
-<td>scope</td>
-<td>bean的设计模式（单例; 多例）</td>
-</tr>
-<tr>
-<td>init-method</td>
-<td>前置方法； 在构造方法执行后执行</td>
-</tr>
-<tr>
-<td>destroy</td>
-<td>销毁方法 在销毁Spring容器前执行</td>
-</tr>
-<tr>
-<td>lazy-init</td>
-<td>延迟加载；只在单例下有效</td>
-</tr>
-</tbody></table>
-<p>现在我们的对象创建都交给了SpringIOC，那我们要给对象赋值该怎么做呢？</p>
-<h2 id="SpringIOC的另一个属性-DI（依赖注入）"><a href="#SpringIOC的另一个属性-DI（依赖注入）" class="headerlink" title="SpringIOC的另一个属性 DI（依赖注入）"></a>SpringIOC的另一个属性 DI（依赖注入）</h2><p><strong>什么是依赖注入(denpendices injection)？</strong><br>    就是给对象的属性赋值</p>
-<p><strong>spring给对象赋予属性值（依赖注入）的方式（3种）</strong></p>
-<ul>
-<li><p>利用带参的构造器给对象属性赋值</p>
-</li>
-<li><p>利用setter方法给对象的属性赋值</p>
-</li>
-<li><p>利用p空间给对象的属性赋值(底层还是依赖Setter方法)。</p>
-</li>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
-<h4 id="带参的构造器（要在实体类中有一个带参的构造器）"><a href="#带参的构造器（要在实体类中有一个带参的构造器）" class="headerlink" title="带参的构造器（要在实体类中有一个带参的构造器）"></a>带参的构造器（要在实体类中有一个带参的构造器）</h4><p>applicationContext<br><img src="https://img-blog.csdnimg.cn/20191207205308658.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="配置文件"><br>测试类<br><img src="https://img-blog.csdnimg.cn/20191207204743804.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="测试类"><br><img src="https://img-blog.csdnimg.cn/2019120720463014.jpg" alt="结果"></p>
-<h3 id="setter方法给对象的属性赋值"><a href="#setter方法给对象的属性赋值" class="headerlink" title="setter方法给对象的属性赋值"></a>setter方法给对象的属性赋值</h3><p>配置文件<br><img src="https://img-blog.csdnimg.cn/20191207205740108.jpg" alt=""></p>
-<h3 id="p空间给对象的属性赋值-底层还是依赖Setter方法"><a href="#p空间给对象的属性赋值-底层还是依赖Setter方法" class="headerlink" title="p空间给对象的属性赋值(底层还是依赖Setter方法)"></a>p空间给对象的属性赋值(底层还是依赖Setter方法)</h3><p><img src="https://img-blog.csdnimg.cn/20191207210028743.jpg" alt="在这里插入图片描述"></p>
-<h4 id="同样-依赖注入也同样支持注解"><a href="#同样-依赖注入也同样支持注解" class="headerlink" title="同样 依赖注入也同样支持注解"></a>同样 依赖注入也同样支持注解</h4><p><strong>==@Autowired==<br>注入数据，从IOC容器获取另一个对象来注入。<br>使用前提： spring容器必须存在相同类型的值。<br>可以修饰成员变量，也可以修饰方法</strong></p>
-<p><strong>==@Qualifier==<br>如果想让@Autowired根据指定的对象（别名）名称实现依赖注入，要配置@Qualifier注解</strong></p>
-<p><strong>==@Value==</strong><br><strong>直接给简单类型的字段赋值</strong><br><strong>获取配置文件值</strong></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>关于SpringIOC的控制反转和依赖注入就到处告一段落了<br>有空在更！！！<br>如果文章有错的地方欢迎指正，大家互相交流，互相探讨。</p>
-<h4 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h4><p><a href="https://zhuanlan.zhihu.com/p/29426019" target="_blank" rel="noopener">关于依赖注入</a></p>
 
-      
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">juhaozero的博客</div>
+        <div class="logo-desc">
+            
+            哇哇哇哇哇
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC/" data-id="ck50x184d0002dwg5c9oz8iqc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    
 
-  
-    <article id="post-缓存雪崩、击穿和穿透" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/05/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E5%92%8C%E7%A9%BF%E9%80%8F/" class="article-date">
-  <time datetime="2020-01-05T07:22:41.735Z" itemprop="datePublished">2020-01-05</time>
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/juhaozero/juhaozero.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/juhaozero/juhaozero.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E5%92%8C%E7%A9%BF%E9%80%8F/">缓存雪崩、击穿和穿透</a>
-    </h1>
-  
+    </nav>
 
-      </header>
+</header>
+
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉</p>
-<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p>之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，<strong>我们可以为这些key在缓存中设置对应的值为null</strong>，后面查询这个key的时候就不用查询数据库了，(访问key未在DB查询到值，也将空值写进缓存，设置较短过期时间)</p>
-<h2 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>在高并发的情况下，大量的请求同时查询同一个key时，此时这个key正好失效了，就会导致同一时间，这些请求都会去查询数据库，这样的现象我们称为缓存击穿。</p>
-<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用分布式锁，每次拿到锁的时候都要去查询一下缓存有没有、查不到缓存的情况下，只有拿到锁的第一个线程去请求数据库，然后插入缓存。</p>
-<h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>缓存服务或春失效、大量数据访问DB、、当某一时刻发生大规模的缓存失效的情况，缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p>
-<h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用集群，降低服务宕机的概率<br>可以给缓存设置过期时间时加上一个随机值时间，使得每个key的过期时间分布开来，不会集中在同一时刻失效。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="2020年见"><a href="#2020年见" class="headerlink" title="2020年见"></a>2020年见</h4>
-      
+<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
+
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color:rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    
+
+    <div class="carousel-item red white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                <!-- 
+                    juhaozero
+                 -->
+                
+                    juhaozero
+                
+            </div>
+
+            <div class="description center-align">
+                
+                    <!-- 哇哇哇哇哇 -->
+                    <span id="jinrishici-sentence">正在加载今日诗词...</span>
+                
+            </div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/05/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E5%92%8C%E7%A9%BF%E9%80%8F/" data-id="ck50x184g0003dwg524hc07kc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
+<script>
+// 每天切换 banner 图.  Switch banner image every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+                <a href="https://github.com/juhaozero/juhaozero.github.io.git" class="waves-effect waves-light btn" target="_blank">
+                    <i class="fa fa-github-alt"></i>Github
+                </a>
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/juhaozero" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
 
 
-  
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+
+    <a href="https://user.qzone.qq.com/602994954" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+        </div>
     </div>
-  </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Revent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94AOP(%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%8C%E5%88%87%E4%BB%80%E4%B9%88%E9%9D%A2%EF%BC%9F/">Spring入门——AOP(面向切面，切什么面？</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/05/Spring%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC/">Spring入门——控制反转是什么鬼</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/05/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E5%92%8C%E7%A9%BF%E9%80%8F/">缓存雪崩、击穿和穿透</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+</div>
 
-  
-</aside>
+<script>
+$(function () {
+    let coverSlider = $('.carousel');
+    coverSlider.carousel({
+        duration: Number('120'),
+        fullWidth: true,
+        indicators: 'true' === 'true'
+    });
+
+    let carouselIntervalId;
+    
+    // Loop to call the next cover article picture.
+    let autoCarousel = function() {
+        carouselIntervalId = setInterval(function () {
+            coverSlider.carousel('next');
+        }, 5000);
+    };
+    autoCarousel();
+    
+
+    let restartPlay = function () {
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        clearInterval(carouselIntervalId);
+        autoCarousel();
+        
+    };
+
+    
+    // prev and next cover post.
+    $('#prev-cover').click(function () {
+        coverSlider.carousel('prev');
+        restartPlay();
+    });
+    $('#next-cover').click(function () {
+        coverSlider.carousel('next');
+        restartPlay();
+    });
+    
+});
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+
+                    
+
+                    
+
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/01/05/spring-ru-men-aop-mian-xiang-qie-mian-qie-shi-me-mian/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
+什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/01/05/spring-ru-men-kong-zhi-fan-zhuan-shi-shi-me-gui/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            最近学了Spring 但一直没整理，趁着空档整理一下吧！
+在正式开始Spring的学习前，我们先来认识几个概念
+什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
+解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            </span>
+                            <span class="publish-author">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 WeiYang. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">3.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/juhaozero" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/602994954" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
 </footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
+    <!-- 雪花特效 -->
+    
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 </body>
+
 </html>

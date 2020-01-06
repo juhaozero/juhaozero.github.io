@@ -8,9 +8,11 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="最近学了Spring 但一直没整理，趁着空档整理一下吧！
-在正式开始Spring的学习前，我们先来认识几个概念
-什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring">
+    <meta name="description" content="title: Spring入门
+catalog: true
+date: 2020 01-05
+subtitle: 
+header-img: https://img-blog.csdnimg.cn/20191207175647988.jpg?">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -100,13 +102,6 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
-            
-            <span>友情链接</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/contact" class="waves-effect waves-light">
             
             <span>留言板</span>
@@ -180,15 +175,6 @@
                 <i class="fa fa-fw fa-link"></i>
                 
                 关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                友情链接
             </a>
         </li>
         
@@ -434,7 +420,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -457,7 +443,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学了Spring 但一直没整理，趁着空档整理一下吧！</p>
+                <pre class="line-numbers language-json"><code class="language-json">title<span class="token operator">:</span> Spring入门
+catalog<span class="token operator">:</span> <span class="token boolean">true</span>
+date<span class="token operator">:</span> <span class="token number">2020</span> <span class="token number">01</span>-<span class="token number">05</span>
+subtitle<span class="token operator">:</span> 
+header-img<span class="token operator">:</span> https<span class="token operator">:</span>//img-blog.csdnimg.cn/<span class="token number">20191207175647988</span>.jpg?x-oss-process=image/watermark<span class="token punctuation">,</span>type_ZmFuZ3poZW5naGVpdGk<span class="token punctuation">,</span>shadow_10<span class="token punctuation">,</span>text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=<span class="token punctuation">,</span>size_16<span class="token punctuation">,</span>color_FFFFFF<span class="token punctuation">,</span>t_70
+top<span class="token operator">:</span> top
+tags<span class="token operator">:</span> Java
+categories<span class="token operator">:</span> Spring<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最近学了Spring 但一直没整理，趁着空档整理一下吧！</p>
 <p><strong>在正式开始Spring的学习前，我们先来认识几个概念</strong></p>
 <h3 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h3><p>Spring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！<br>为什么说Spring可以解决Java开发中的所有问题。</p>
 <p> **1. 基于POJO轻量级和最小侵入式开发 通过依赖注入(DI)和面向接口实现松耦合。</p>
@@ -536,9 +530,9 @@
 </li>
 <li><p><strong>@Repository：创建对象加入容器。 一般用于持久层的注解</strong></p>
 <p>但要用到注解属性需要在配置文件中开启注解支持<br><img src="https://img-blog.csdnimg.cn/20191207202201127.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"></p>
-<h3 id="SpringIOC（控制反转）"><a href="#SpringIOC（控制反转）" class="headerlink" title="==SpringIOC（控制反转）=="></a>==SpringIOC（控制反转）==</h3><p>控制反转的思想最核心的地方在于，我们把创建对象的权力交给了Spring，由不使用资源的第三方Spring管理，这可以带来很多好处。<strong>第一，资源的集中管理。第二，降低了使用资源双方的依赖程度，也就是我们说的耦合度。</strong><br>也就是说创建对象会造成双方之间的依赖程度，那我不去创建对象，由Spring创建对象，Spring没有和我的业务层产生关系，只是作为一个容器，创建对象往Spring容器中放，使用对象往Spring中拿，通过Spring减少了对象之间的耦合。</p>
 </li>
 </ol>
+<h3 id="SpringIOC（控制反转）"><a href="#SpringIOC（控制反转）" class="headerlink" title="==SpringIOC（控制反转）=="></a>==SpringIOC（控制反转）==</h3><p>控制反转的思想最核心的地方在于，我们把创建对象的权力交给了Spring，由不使用资源的第三方Spring管理，这可以带来很多好处。<strong>第一，资源的集中管理。第二，降低了使用资源双方的依赖程度，也就是我们说的耦合度。</strong><br>    也就是说创建对象会造成双方之间的依赖程度，那我不去创建对象，由Spring创建对象，Spring没有和我的业务层产生关系，只是作为一个容器，创建对象往Spring容器中放，使用对象往Spring中拿，通过Spring减少了对象之间的耦合。</p>
 <h3 id="SpringIOC容器（Bean标签属性）"><a href="#SpringIOC容器（Bean标签属性）" class="headerlink" title="SpringIOC容器（Bean标签属性）"></a>SpringIOC容器（Bean标签属性）</h3><table>
 <thead>
 <tr>
@@ -587,8 +581,8 @@
 </li>
 </ul>
 <h4 id="带参的构造器（要在实体类中有一个带参的构造器）"><a href="#带参的构造器（要在实体类中有一个带参的构造器）" class="headerlink" title="带参的构造器（要在实体类中有一个带参的构造器）"></a>带参的构造器（要在实体类中有一个带参的构造器）</h4><p>applicationContext<br><img src="https://img-blog.csdnimg.cn/20191207205308658.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="配置文件"><br>测试类<br><img src="https://img-blog.csdnimg.cn/20191207204743804.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="测试类"><br><img src="https://img-blog.csdnimg.cn/2019120720463014.jpg" alt="结果"></p>
-<h3 id="setter方法给对象的属性赋值"><a href="#setter方法给对象的属性赋值" class="headerlink" title="setter方法给对象的属性赋值"></a>setter方法给对象的属性赋值</h3><p>配置文件<br><img src="https://img-blog.csdnimg.cn/20191207205740108.jpg" alt></p>
-<h3 id="p空间给对象的属性赋值-底层还是依赖Setter方法"><a href="#p空间给对象的属性赋值-底层还是依赖Setter方法" class="headerlink" title="p空间给对象的属性赋值(底层还是依赖Setter方法)"></a>p空间给对象的属性赋值(底层还是依赖Setter方法)</h3><p><img src="https://img-blog.csdnimg.cn/20191207210028743.jpg" alt="在这里插入图片描述"></p>
+<h3 id="setter方法给对象的属性赋值"><a href="#setter方法给对象的属性赋值" class="headerlink" title="setter方法给对象的属性赋值"></a>setter方法给对象的属性赋值</h3><p>配置文件<br><img src="https://img-blog.csdnimg.cn/20191207205740108.jpg" alt=" "></p>
+<h3 id="p空间给对象的属性赋值-底层还是依赖Setter方法"><a href="#p空间给对象的属性赋值-底层还是依赖Setter方法" class="headerlink" title="p空间给对象的属性赋值(底层还是依赖Setter方法)"></a>p空间给对象的属性赋值(底层还是依赖Setter方法)</h3><p><img src="https://img-blog.csdnimg.cn/20191207210028743.jpg" alt=" "></p>
 <h4 id="同样-依赖注入也同样支持注解"><a href="#同样-依赖注入也同样支持注解" class="headerlink" title="同样 依赖注入也同样支持注解"></a>同样 依赖注入也同样支持注解</h4><p><strong>==@Autowired==<br>注入数据，从IOC容器获取另一个对象来注入。<br>使用前提： spring容器必须存在相同类型的值。<br>可以修饰成员变量，也可以修饰方法</strong></p>
 <p><strong>==@Qualifier==<br>如果想让@Autowired根据指定的对象（别名）名称实现依赖注入，要配置@Qualifier注解</strong></p>
 <p><strong>==@Value==</strong><br><strong>直接给简单类型的字段赋值</strong><br><strong>获取配置文件值</strong></p>
@@ -1169,7 +1163,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.8k</span>
+            <span class="white-color">3.9k</span>
             
 
             <br>

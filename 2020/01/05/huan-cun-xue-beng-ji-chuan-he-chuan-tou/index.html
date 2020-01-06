@@ -99,13 +99,6 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
-            
-            <span>友情链接</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/contact" class="waves-effect waves-light">
             
             <span>留言板</span>
@@ -179,15 +172,6 @@
                 <i class="fa fa-fw fa-link"></i>
                 
                 关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                友情链接
             </a>
         </li>
         
@@ -462,7 +446,7 @@
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用分布式锁，每次拿到锁的时候都要去查询一下缓存有没有、查不到缓存的情况下，只有拿到锁的第一个线程去请求数据库，然后插入缓存。</p>
 <h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>缓存服务或春失效、大量数据访问DB、、当某一时刻发生大规模的缓存失效的情况，缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p>
 <h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用集群，降低服务宕机的概率<br>可以给缓存设置过期时间时加上一个随机值时间，使得每个key的过期时间分布开来，不会集中在同一时刻失效。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
 <h4 id="2020年见"><a href="#2020年见" class="headerlink" title="2020年见"></a>2020年见</h4>
             </div>
             <hr />
@@ -827,13 +811,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/05/spring-ru-men-kong-zhi-fan-zhuan-shi-shi-me-gui/">
+                <a href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Spring入门--控制反转">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Spring入门--控制反转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -846,12 +830,27 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Spring/" class="post-category" target="_blank">
+                                    Spring
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -860,23 +859,23 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/">
+                <a href="/2020/01/05/spring-ru-men-aop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Spring入门--AOP">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Spring入门--AOP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
-解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后
+                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
+什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
                         
                     </div>
                     <div class="publish-info">
@@ -885,10 +884,24 @@
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Spring/" class="post-category" target="_blank">
+                                    Spring
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

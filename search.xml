@@ -29,19 +29,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/"/>
-      <url>/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</url>
-      
-        <content type="html"><![CDATA[<h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉</p><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p>之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，<strong>我们可以为这些key在缓存中设置对应的值为null</strong>，后面查询这个key的时候就不用查询数据库了，(访问key未在DB查询到值，也将空值写进缓存，设置较短过期时间)</p><h2 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>在高并发的情况下，大量的请求同时查询同一个key时，此时这个key正好失效了，就会导致同一时间，这些请求都会去查询数据库，这样的现象我们称为缓存击穿。</p><h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用分布式锁，每次拿到锁的时候都要去查询一下缓存有没有、查不到缓存的情况下，只有拿到锁的第一个线程去请求数据库，然后插入缓存。</p><h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>缓存服务或春失效、大量数据访问DB、、当某一时刻发生大规模的缓存失效的情况，缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p><h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用集群，降低服务宕机的概率<br>可以给缓存设置过期时间时加上一个随机值时间，使得每个key的过期时间分布开来，不会集中在同一时刻失效。</p><p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p><h4 id="2020年见"><a href="#2020年见" class="headerlink" title="2020年见"></a>2020年见</h4>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Spring入门--AOP</title>
       <link href="/2020/01/05/spring-ru-men-aop/"/>
       <url>/2020/01/05/spring-ru-men-aop/</url>
@@ -52,6 +39,31 @@
       <categories>
           
           <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>缓存常见概念</title>
+      <link href="/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/"/>
+      <url>/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</url>
+      
+        <content type="html"><![CDATA[<h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉</p><h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p>之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，<strong>我们可以为这些key在缓存中设置对应的值为null</strong>，后面查询这个key的时候就不用查询数据库了，(访问key未在DB查询到值，也将空值写进缓存，设置较短过期时间)</p><h2 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>在高并发的情况下，大量的请求同时查询同一个key时，此时这个key正好失效了，就会导致同一时间，这些请求都会去查询数据库，这样的现象我们称为缓存击穿。</p><h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用分布式锁，每次拿到锁的时候都要去查询一下缓存有没有、查不到缓存的情况下，只有拿到锁的第一个线程去请求数据库，然后插入缓存。</p><h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>缓存服务或春失效、大量数据访问DB、、当某一时刻发生大规模的缓存失效的情况，缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p><h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用集群，降低服务宕机的概率<br>可以给缓存设置过期时间时加上一个随机值时间，使得每个key的过期时间分布开来，不会集中在同一时刻失效。</p><p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p><h4 id="2020年见"><a href="#2020年见" class="headerlink" title="2020年见"></a>2020年见</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
           
       </categories>
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-06T11:55:23.765Z</updated>
+  <updated>2020-01-06T12:06:54.788Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/"/>
     <id>http://yoursite.com/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/</id>
     <published>2020-01-05T16:00:00.000Z</published>
-    <updated>2020-01-06T11:55:23.765Z</updated>
+    <updated>2020-01-06T12:06:54.788Z</updated>
     
     <summary type="html">
     
@@ -45,28 +45,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/"/>
-    <id>http://yoursite.com/2020/01/05/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</id>
-    <published>2020-01-05T07:22:41.735Z</published>
-    <updated>2020-01-06T11:16:53.509Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;缓存穿透&quot;&gt;&lt;a href=&quot;#缓存穿透&quot; class=&quot;headerlink&quot; title=&quot;缓存穿透&quot;&gt;&lt;/a&gt;缓存穿透&lt;/h2&gt;&lt;h3 id=&quot;概念：&quot;&gt;&lt;a href=&quot;#概念：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Spring入门--AOP</title>
     <link href="http://yoursite.com/2020/01/05/spring-ru-men-aop/"/>
     <id>http://yoursite.com/2020/01/05/spring-ru-men-aop/</id>
@@ -86,6 +64,32 @@
     </summary>
     
       <category term="Spring" scheme="http://yoursite.com/categories/Spring/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缓存常见概念</title>
+    <link href="http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/"/>
+    <id>http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</id>
+    <published>2019-12-30T16:00:00.000Z</published>
+    <updated>2020-01-06T12:07:08.159Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;缓存穿透&quot;&gt;&lt;a href=&quot;#缓存穿透&quot; class=&quot;headerlink&quot; title=&quot;缓存穿透&quot;&gt;&lt;/a&gt;缓存穿透&lt;/h2&gt;&lt;h3 id=&quot;概念：&quot;&gt;&lt;a href=&quot;#概念：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
     
     
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>

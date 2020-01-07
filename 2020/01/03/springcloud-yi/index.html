@@ -465,20 +465,20 @@
 <p>微服务 (Microservices)<br>是一种<strong>软件架构风格</strong>，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务是一种以业务功能为主的服务设计概念，每一个服务都具有自主运行的业务功能，对外开放不受语言限制的 API (最常用的是 HTTP)，应用程序则是由一个或多个微服务组成。</p>
 </blockquote>
 <p>也就是说 我们将我们的服务拆分成更小 每个服务相互独立 只需暴露接口，两者毫不相干，只通过接口进行调用。<br>当我们用上微服务之后，我们只需关心每个业务的接口之间的调用即可。  每个服务都是独立的组件，可复用，可替换，降低耦合，易维护。常见的微服务架构有  dubbo、Kubernetes、SpringCloud</p>
-<h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><p><img src="https://img-blog.csdnimg.cn/20191211101532620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>SpringCloud是Spring的子项目</p>
+<h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><p><img src="https://img-blog.csdnimg.cn/20191211101532620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>SpringCloud是Spring的子项目</p>
 <p>SpringCloud整合了市面流行的技术：集成了配置管理，服务发现，智能路由，负载均衡，熔断器，控制总线，集群状态等等功能。</p>
 <p>主要组件有</p>
 <h1 id="SpringCloudNetflix"><a href="#SpringCloudNetflix" class="headerlink" title="SpringCloudNetflix"></a>SpringCloudNetflix</h1><p><img src="https://img-blog.csdnimg.cn/20191211102225612.jpg" alt="netfix"><br>SpringCloudNetflix：<strong>与Netflix的各种OSS组件集成(==Eureka==, ==Hystrix==, , Archaius等)</strong>。</p>
-<p>这个组件下集成了Spring的核心功能<br><img src="https://img-blog.csdnimg.cn/20191211102649367.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>这个组件下集成了Spring的核心功能<br><img src="https://img-blog.csdnimg.cn/20191211102649367.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
 <h4 id="Netflix-Eureka（服务中心）"><a href="#Netflix-Eureka（服务中心）" class="headerlink" title="Netflix Eureka（服务中心）"></a>Netflix Eureka（服务中心）</h4><p>服务中心：微服务的注册中心</p>
 <h4 id="Netflix-Hystrix（熔断器）"><a href="#Netflix-Hystrix（熔断器）" class="headerlink" title="Netflix Hystrix（熔断器）"></a>Netflix Hystrix（熔断器）</h4><p>熔断器：当服务发生错误时，隔离访问远程服务、第三方库，防止出现级联失败。</p>
 <h4 id="Netflix-Zuul（智能路由）"><a href="#Netflix-Zuul（智能路由）" class="headerlink" title="Netflix Zuul（智能路由）"></a>Netflix Zuul（智能路由）</h4><p>智能路由：当访问服务时经过，相当于服务的转发。</p>
 <h4 id="Netflix-Ribbon（客户端负载均衡）"><a href="#Netflix-Ribbon（客户端负载均衡）" class="headerlink" title="Netflix Ribbon（客户端负载均衡）"></a>Netflix Ribbon（客户端负载均衡）</h4><p>负载均衡： 在集群的条件下，实现对服务器访问的分配</p>
-<h1 id="Spring-Cloud-Gateway（网关）"><a href="#Spring-Cloud-Gateway（网关）" class="headerlink" title="Spring Cloud Gateway（网关）"></a>Spring Cloud Gateway（网关）</h1><p><img src="https://img-blog.csdnimg.cn/20191211105157625.jpg" alt="在这里插入图片描述"><br>该项目提供了一个用于在Spring MVC之上构建API网关的库。 Spring Cloud Gateway旨在提供一种简单而有效的方法来路由到API，并为它们提供跨领域的关注，例如：安全性，监视/指标和弹性。<br><strong>网关中也包含了路由，即使用了网关就无需配置Zuul。</strong></p>
-<h1 id="Spring-Cloud-Config（配置中心）"><a href="#Spring-Cloud-Config（配置中心）" class="headerlink" title="Spring Cloud Config（配置中心）"></a>Spring Cloud Config（配置中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110154256.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="config"><br>翻译不过来了，<br>再简单简单说就是：之前的配置文件是存放在项目内部的，耦合度太高，我们把配置文件抽取出来，放在git<br>仓库上，对git仓库统一进行配置。</p>
-<h1 id="Spring-Cloud-Bus（消息总线）"><a href="#Spring-Cloud-Bus（消息总线）" class="headerlink" title="Spring Cloud Bus（消息总线）"></a>Spring Cloud Bus（消息总线）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110711264.jpg" alt="在这里插入图片描述"><br>Spring Cloud Bus将轻量级消息代理程序链接到分布式系统的节点。 然后可以将其用于广播状态更改（例如配置更改）或其他管理指令。<br>简单点说：<strong>我们可以利用SpringCloudBus做到在不重启项目的情况下，实现配置文件的修改。</strong></p>
-<h1 id="Spring-Cloud-Security-（安全中心）"><a href="#Spring-Cloud-Security-（安全中心）" class="headerlink" title="Spring Cloud Security （安全中心）"></a>Spring Cloud Security （安全中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211111336964.jpg" alt><br>Spring Cloud Security为构建安全的应用程序和服务提供了一组基本的方法。可以在外部(或集中)进行大量配置的声明式模型有助于实现大型系统的协作、远程组件，通常使用中央indentity管理服务。它在云计算这样的服务平台上也非常容易使用。</p>
-<h1 id="Spring-Cloud-Consul（多服务中心）"><a href="#Spring-Cloud-Consul（多服务中心）" class="headerlink" title="Spring Cloud Consul（多服务中心）"></a>Spring Cloud Consul（多服务中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211113226991.jpg" alt="在这里插入图片描述"><br>Spring Cloud Consul通过自动配置并绑定到Spring Environment和其他Spring编程模型习惯用法，为Spring Boot应用程序提供Consul集成。 通过一些简单的注释，您可以快速启用和配置应用程序内的通用模式，并使用Hashicorp的Consul构建大型分布式系统</p>
+<h1 id="Spring-Cloud-Gateway（网关）"><a href="#Spring-Cloud-Gateway（网关）" class="headerlink" title="Spring Cloud Gateway（网关）"></a>Spring Cloud Gateway（网关）</h1><p><img src="https://img-blog.csdnimg.cn/20191211105157625.jpg" alt=" "><br>该项目提供了一个用于在Spring MVC之上构建API网关的库。 Spring Cloud Gateway旨在提供一种简单而有效的方法来路由到API，并为它们提供跨领域的关注，例如：安全性，监视/指标和弹性。<br><strong>网关中也包含了路由，即使用了网关就无需配置Zuul。</strong></p>
+<h1 id="Spring-Cloud-Config（配置中心）"><a href="#Spring-Cloud-Config（配置中心）" class="headerlink" title="Spring Cloud Config（配置中心）"></a>Spring Cloud Config（配置中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110154256.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>翻译不过来了，<br>再简单简单说就是：之前的配置文件是存放在项目内部的，耦合度太高，我们把配置文件抽取出来，放在git<br>仓库上，对git仓库统一进行配置。</p>
+<h1 id="Spring-Cloud-Bus（消息总线）"><a href="#Spring-Cloud-Bus（消息总线）" class="headerlink" title="Spring Cloud Bus（消息总线）"></a>Spring Cloud Bus（消息总线）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110711264.jpg" alt=" "><br>Spring Cloud Bus将轻量级消息代理程序链接到分布式系统的节点。 然后可以将其用于广播状态更改（例如配置更改）或其他管理指令。<br>简单点说：<strong>我们可以利用SpringCloudBus做到在不重启项目的情况下，实现配置文件的修改。</strong></p>
+<h1 id="Spring-Cloud-Security-（安全中心）"><a href="#Spring-Cloud-Security-（安全中心）" class="headerlink" title="Spring Cloud Security （安全中心）"></a>Spring Cloud Security （安全中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211111336964.jpg" alt=" "><br>Spring Cloud Security为构建安全的应用程序和服务提供了一组基本的方法。可以在外部(或集中)进行大量配置的声明式模型有助于实现大型系统的协作、远程组件，通常使用中央indentity管理服务。它在云计算这样的服务平台上也非常容易使用。</p>
+<h1 id="Spring-Cloud-Consul（多服务中心）"><a href="#Spring-Cloud-Consul（多服务中心）" class="headerlink" title="Spring Cloud Consul（多服务中心）"></a>Spring Cloud Consul（多服务中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211113226991.jpg" alt="  "><br>Spring Cloud Consul通过自动配置并绑定到Spring Environment和其他Spring编程模型习惯用法，为Spring Boot应用程序提供Consul集成。 通过一些简单的注释，您可以快速启用和配置应用程序内的通用模式，并使用Hashicorp的Consul构建大型分布式系统</p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>当然SpringCloud还有很多很多的组件，这里这是列举了最常见的组件</p>
 <p>有兴趣可到官网查看<a href="https://spring.io/" target="_blank" rel="noopener">Spring官网</a></p>
 <p>SpringCloud的体系相当庞大，先了解概念，</p>
@@ -558,7 +558,7 @@
     let gitalk = new Gitalk({
         clientID: '42ec2ed717b327f15b4b',
         clientSecret: '80dd07f25bdea27f02b74e3111ee79b6ab15ab13',
-        repo: 'https://juhaozero.github.io/',
+        repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
         id: '2020/01/03/springcloud-yi/',
@@ -1092,7 +1092,7 @@ List item
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.9k</span>
+            <span class="white-color">9k</span>
             
 
             <br>

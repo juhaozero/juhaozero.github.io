@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="juhaozero的博客">
+    <meta name="keywords" content="Spring入门--SpringMVC, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
-什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能">
+    <meta name="description" content="三层架构在了解SpringMVC前我们看一下传统的三层架构
+
+三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>juhaozero的博客</title>
+    <title>Spring入门--SpringMVC | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +276,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        Spring入门--SpringMVC
                     </div>
                 </div>
             </div>
@@ -391,11 +392,24 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Spring/" target="_blank">
+                            <span class="chip bg-color">Spring</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Java/" class="post-category" target="_blank">
+                            Java
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -403,7 +417,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-05
+                    2020-01-06
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -417,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    907
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
                 
@@ -440,97 +454,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SpringAOP"><a href="#SpringAOP" class="headerlink" title="SpringAOP"></a>SpringAOP</h1><p>了解SpringAOP之前，我们先要了解一些关于<strong>代理</strong>的概念</p>
-<h3 id="什么是代理"><a href="#什么是代理" class="headerlink" title="什么是代理"></a>什么是代理</h3><p>代理(Proxy)是一种<strong>设计模式</strong>,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:<strong>可以在目标对象实现的基础上,增强额外的功能操作,即扩展目标对象的功能</strong></p>
-<p>简单点说 就是在不修改代码的情况下，对原有的一些功能进行增强。举个例子，当我们想吃饭时，以前我们会买菜，做饭，而现在我们只需要在点餐App上下单即可，外卖小哥就会将饭菜打包到我们这里来，我们省去了买菜，做饭这些时间，转而由饭店为我们代劳（差不多就是这个意思）。</p>
-<h3 id="动态代理模式"><a href="#动态代理模式" class="headerlink" title="动态代理模式"></a>动态代理模式</h3><p><img src="https://img-blog.csdnimg.cn/20191208093533313.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="动态代理模式"><br>Java代理有三种</p>
-<ol>
-<li>静态代理 </li>
-<li>proxy类动态代理 </li>
-<li>cglib代理</li>
-</ol>
-<h1 id="proxy动态代理和cglib代理"><a href="#proxy动态代理和cglib代理" class="headerlink" title="proxy动态代理和cglib代理"></a>proxy动态代理和cglib代理</h1><h3 id="proxy实现动态代理"><a href="#proxy实现动态代理" class="headerlink" title="proxy实现动态代理"></a>proxy实现动态代理</h3><p>创建一个Service接口 并实现接口（<strong>Proxy要求被代理对象必须要实现接口</strong>）<br><img src="https://img-blog.csdnimg.cn/20191208093852764.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>proxy实现动态代理,实现打印日志<br><img src="https://img-blog.csdnimg.cn/20191208094045816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Poxy"><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208094903531.jpg" alt=" "><br><img src="https://img-blog.csdnimg.cn/20191208094912218.jpg" alt="在这里插入图片描述"></p>
-<h3 id="cglib代理"><a href="#cglib代理" class="headerlink" title="cglib代理"></a>cglib代理</h3><p><strong>cglib代理模拟事务的开启和关闭</strong><br><img src="https://img-blog.csdnimg.cn/20191208095244801.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208095414381.jpg" alt="结果"><br>proxy动态代理和cglib代理不同点在于<br><strong>==Poxy需要实现接口，cglib可以没有实现如何接口，只需要该类不是final修饰的即可==</strong></p>
-<p>代理模式差不多讲到这里，感兴趣的可以往深处了解<br>推荐阅读<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-proxy-pattern/index.html" target="_blank" rel="noopener">代理模式原理及实例讲解</a><br><a href="https://www.cnblogs.com/cenyu/p/6289209.html" target="_blank" rel="noopener">三种代理模式</a></p>
-<h3 id="Spring-AOP-简介"><a href="#Spring-AOP-简介" class="headerlink" title="Spring AOP 简介"></a>Spring AOP 简介</h3><p>如果说 SpringIOC 是 Spring 的核心，<br>那么SpringAOP即面向切面编程就是 Spring 最为重要的功能之一</p>
-<h5 id="什么是SpringAOP"><a href="#什么是SpringAOP" class="headerlink" title="什么是SpringAOP"></a>什么是SpringAOP</h5><p>所谓面向切面编程，就是我希望在目标对象（有无接口都可以）上扩展原有代码的功能，但可以在不修改源码的基础上来完成！，这听起来是不是有点耳熟，这不就是代理嘛！<br>SpringAOP是基于代理进行的。那什么是面向切面编程呢？？</p>
-<p>百度百科上是这样介绍的</p>
+                <h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>在了解SpringMVC前我们看一下传统的三层架构<br><img src="https://img-blog.csdnimg.cn/20191209085710307.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="传统的三层架构"></p>
 <blockquote>
-<p>可以通过预编译方式和运行期动态代理实现在不修改源代码的情况下给程序动态统一添加功能的一种技术。AOP实际是GoF设计模式的延续，设计模式孜孜不倦追求的是调用者和被调用者之间的解耦,提高代码的灵活性和可扩展性，AOP可以说也是这种目标的一种实现。<br>    在Spring中提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
+<p>三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business Logic Layer）、数据访问层（Data access layer）。区分层次的目的即为了“高内聚低耦合”的思想。在软件体系架构设计中，分层式结构是最常见，也是最重要的一种结构。微软推荐的分层式结构一般分为三层，从下至上分别为：数据访问层、业务逻辑层（又或称为领域层）、表示层</p>
 </blockquote>
-<p>简单点说AOP实现了 ==通用的<strong>非核心</strong>业务逻辑，从<strong>核心</strong>业务逻辑中进行抽离==</p>
-<p>举个简单例子：如果我们要做日志的管理，那我们需要在每一行的业务代码上添加日志管理的代码，但这造成了代码之间的耦合，但如果有一天我们不需要日志管理这个业务，我们又需要往业务代码上注释日志管理的代码，这样显然是不够方便的，我们就可以利用AOP进行编程.</p>
-<h3 id="SpringAOP的概念"><a href="#SpringAOP的概念" class="headerlink" title="SpringAOP的概念"></a>SpringAOP的概念</h3><ol>
-<li>连接点（jointPoint）  被代理对象的所有方法，即被代理的类下的方法</li>
-<li>切入点（Poincut）被增强的方法就是切入点，即需要在哪个方法下添加其他业务逻辑</li>
-<li>通知（Advice） 增强的代码，即非核心业务逻辑</li>
-<li>切面（Apsect） 切面 = 通知+ 切入点</li>
-<li>目标对象（Target）被代理对象 </li>
-<li>代理对象 (Proxy) </li>
-</ol>
-<h3 id="Aop编程通知类型"><a href="#Aop编程通知类型" class="headerlink" title="Aop编程通知类型"></a>Aop编程通知类型</h3><p><strong>前置通知 (aop:before)</strong><br>在执行目标对象方法之前执行 </p>
-<p><strong>后置通知 (aop:after-returning)</strong><br>在执行目标对象方法之后执行 (异常不执行) </p>
-<p><strong>异常通知(aop:after-throwing)</strong><br>在执行目标对象方法里面发生异常时候执行 </p>
-<p><strong>最终通知（aop:after）</strong><br>在执行完目标对象方法后始终执行的方法就是最终通知(异常也执行) </p>
-<p><strong>环绕通知 (aop:around)</strong><br>自定义如何执行目标方法  </p>
-<p>了解了这几个概念后我们就可以来写我们的SpringAOP的第一个入门案例了</p>
-<h4 id="XMl实现SpringAOP"><a href="#XMl实现SpringAOP" class="headerlink" title="XMl实现SpringAOP"></a>XMl实现SpringAOP</h4><p>导入依赖</p>
-<pre><code>   &lt;dependencies&gt;
-        &lt;!--spring核心包--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!--springaop编程的相关依赖； aop, 切点表达式的依赖： aspectjweaver--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;!--切入点表达式--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
-            &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
-            &lt;version&gt;1.8.13&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;dependency&gt;
-            &lt;groupId&gt;junit&lt;/groupId&gt;
-            &lt;artifactId&gt;junit&lt;/artifactId&gt;
-            &lt;version&gt;4.12&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-
-    &lt;/dependencies&gt;</code></pre><p>写一个Service<br><img src="https://img-blog.csdnimg.cn/20191208103853228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>写一个日志类，模拟事务的开启，关闭，回滚<br><img src="https://img-blog.csdnimg.cn/20191208103840400.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Log"></p>
-<p><img src="https://img-blog.csdnimg.cn/20191208104619402.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h3><p>在上面的案例中我们使用了切入点表达式<br>什么是切入点表达式呢?<br><strong>切入点表达式：（用于声明要在目标对象的哪些方法进行切入通知！！）</strong><br><img src="https://img-blog.csdnimg.cn/20191208105950588.jpg" alt=" "><br> execution( 修饰符 返回值类型 包路径.类名称.方法名称( 参数列表类型 )  )</p>
+<h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC 不是一种技术，而是一种理念</strong><br>  MVC在概念上强调 Model, View, Controller 的分离，各个模块也遵循着由 Controller 来处理消息，Model 掌管数据源，View 负责数据显示的职责分离原则，因此在实现上，MVC 通常会将 MVC 三个部分分离实现。</p>
+<p>MVC包含  </p>
 <ol>
-<li>execution(): 表达式主体。  </li>
-<li>第一个<em>号：表示返回类型， </em>号表示所有的类型。</li>
-<li>包名：表示需要拦截的包名，后面的两个句点表示当前包和当前包的所有子包，com.shelock.service.impl.AccountServiceImpl下的包、子孙包下所有类的方法。</li>
-<li>第二个<em>号：表示类名，</em>号表示所有的类。</li>
-<li><em>(..):最后这个星号表示方法名，</em>号表示所有的方法，后面括弧里面表示方法的参数，两个句点表示任何参数。</li>
+<li>Model    模型（pojo、dao）</li>
+<li>View           视图 (html/jsp)                </li>
+<li>Controller  控制器     （servlet/filter）)  </li>
 </ol>
-<h3 id="通知类型"><a href="#通知类型" class="headerlink" title="通知类型"></a>通知类型</h3><pre><code> &lt;aop:around&gt; &lt;!-- 环绕通知--&gt;
- &lt;aop:before&gt; &lt;!-- 前置通知--&gt;
- &lt;aop:after-returningr&gt; &lt;!-- 后置通知--&gt;
- &lt;aop:after&gt; &lt;!-- 最终通知--&gt;
- &lt;aop:after-throwing&gt; &lt;!--异常通知--&gt;</code></pre><p>如果我们想在方法前面添加业务逻辑，我们就可以使用前置通知，其他同理。</p>
-<h4 id="注解实现SpringAOP"><a href="#注解实现SpringAOP" class="headerlink" title="注解实现SpringAOP"></a>注解实现SpringAOP</h4><p>Spring也提供了注解实现<br><strong>xml文件</strong></p>
-<p>需要在配置文件上开启注解扫描<br><img src="https://img-blog.csdnimg.cn/20191208111926122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"><br>配置切面类<br><img src="https://img-blog.csdnimg.cn/20191208112434501.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="切面类"><br>同理<br>通知类型</p>
-<pre><code>@After    //最终通知
-@AfterReturning     //后置通知
-@AfterThrowing        //异常通知
-@Before            //前置通知</code></pre><p>到这里关于SpringAOP就讲到这里了<br>有空在更！！！！</p>
+<p>MVC和三层架构是两个不同的概念，MVC是 （Model-View-Controller），<strong>严格意义上</strong>说这三个加起来以后才是三层架构中的界面层，也就是说，MVC把三层架构中的界面层再度进行了分化，分成了<strong>控制器</strong>、<strong>视图</strong>、<strong>模型</strong>三个部分。</p>
+<p>再简单点说就是： <strong>MVC是三层架构中的界面层的细化</strong></p>
+<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p><strong>什么是SpringMVC</strong></p>
+<p> SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的<strong>轻量级 Web 框架</strong>，<br> Spring MVC 分离了控制器、模型对象、过滤器以及处理程序对象的角色，这种分离让它们更容易进行定制。<br><img src="https://img-blog.csdnimg.cn/20191209095345567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="SpringMVC三层架构"></p>
+<h2 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h2><p>导入依赖</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
+    <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+      <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+      <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>webmvc<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+      <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">5.0</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="配置web-xml（需要有webapp的包）"><a href="#配置web-xml（需要有webapp的包）" class="headerlink" title="配置web.xml（需要有webapp的包）"></a>配置web.xml（需要有webapp的包）</h3><p><img src="https://img-blog.csdnimg.cn/20191209102242122.jpg" alt=" "><br><strong>配置前端控制器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095622241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="前端控制器"><br><strong>配置映射路径</strong><br>/为无<br><img src="https://img-blog.csdnimg.cn/20191209095643832.jpg" alt="映射路径"></p>
+<h3 id="配置SpringMVC-xml"><a href="#配置SpringMVC-xml" class="headerlink" title="配置SpringMVC.xml"></a>配置SpringMVC.xml</h3><p><strong>配置视图解析器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095548879.jpg" alt="视图解析器"><br><img src="https://img-blog.csdnimg.cn/20191209103045296.jpg" alt="在这里插入图片描述"></p>
+<p><strong>Controller控制器</strong><br>我们模拟一个请求<br><img src="https://img-blog.csdnimg.cn/20191209095814652.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Controller控制器"><br>页面（需要在视图解析器的前缀下）<br><img src="https://img-blog.csdnimg.cn/20191209102600333.jpg" alt="jsp页面"><br>success.jsp<br><img src="https://img-blog.csdnimg.cn/20191209095829738.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="页面"><br>配置Tomcat启动，访问（如果配置映射路径时有配置路径）<br><img src="https://img-blog.csdnimg.cn/2019120910191165.jpg" alt="访问"></p>
+<p>到此我们 SpringMVC入门案例就完成了</p>
+<h1 id="SpringMVC的三大组件"><a href="#SpringMVC的三大组件" class="headerlink" title="SpringMVC的三大组件"></a>SpringMVC的三大组件</h1><ol>
+<li>处理器映射器:（HandlerMapping）</li>
+<li>处理器适配器：(HandlerAdapter )</li>
+<li>视图解析器：    (ViewResolver)</li>
+</ol>
+<p>处理器映射器  ——————  <strong>查找对应的方法</strong><br>处理器适配器  —————— <strong>执行对应的方法</strong><br>视图解析器  ———————  <strong>解析返回值，得到视图路径</strong></p>
+<h3 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h3><ul>
+<li>当用户发出请求后，浏览器会将这个请求交给Web应用服务器（tomcat）</li>
+<li>Web应用服务器会将请求交给 <strong>前端控制器</strong> </li>
+<li><strong>前端控制器</strong>会启动 <strong>处理器映射器</strong> 查找对应的方法</li>
+<li>同时 <strong>前端控制器</strong> 会启动 <strong>处理器适配器</strong> 执行对应的方法（==在映射器找到方法后==）</li>
+<li>得到返回的返回值后会启动<strong>视图解析器</strong>进行加工，得到一个路径，最后请求转发</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20191209105052333.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="请求路径"></p>
+<p><strong>推荐阅读</strong><br><a href="https://zhuanlan.zhihu.com/p/42602265" target="_blank" rel="noopener">SpringMVC执行流程</a><br><a href="https://segmentfault.com/a/1190000013816079" target="_blank" rel="noopener">Spring MVC 流程解析</a></p>
+<h2 id="SpringMVC的一些其他配置"><a href="#SpringMVC的一些其他配置" class="headerlink" title="SpringMVC的一些其他配置"></a>SpringMVC的一些其他配置</h2><p><strong>类型转换器</strong><br>![类型转换器</p>
+<p>](<a href="https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70</a>)<br><img src="https://img-blog.csdnimg.cn/20191209105342516.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="类型转换器"><br><strong>解决SpringMVC静态资源无法访问</strong><br><img src="https://img-blog.csdnimg.cn/2019120910535340.jpg" alt="静态资源放行"></p>
+<p><strong>统一的异常处理器</strong></p>
+<p>创建异常类<br><img src="https://img-blog.csdnimg.cn/20191209110029299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="异常类"><br>SpringMVC.xml 中 创建异常管理器<br><img src="https://img-blog.csdnimg.cn/20191209110043437.jpg" alt="异常管理器"></p>
+<p>到这里关于SpringMVC就讲到这里了<br>有空在更！！！！</p>
 <p>如果文章有错的地方欢迎指正。</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><p><a href="https://juejin.im/post/5b06bf2df265da0de2574ee1" target="_blank" rel="noopener">Spring AOP就是这么简单啦</a><br><a href="https://blog.csdn.net/corbin_zhang/article/details/80576809" target="_blank" rel="noopener"><br>AspectJ的切入点表达式</a></p>
+<p>最后<br>推荐阅读<br><a href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247483973&idx=1&sn=dda2252f37e5eb6db90db636a65c40bf&chksm=ebd74344dca0ca52d671fc0fa072bcc80892bfb5801ceaab6a4754036d246f5bef960c1840bd&scene=21###wechat_redirect" target="_blank" rel="noopener">Spring入门就是这么简单</a><br><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/SpringMVC-Principle.md" target="_blank" rel="noopener">Spring入门详解</a></p>
 
             </div>
             <hr />
@@ -565,9 +537,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《》
+                    《Spring入门--SpringMVC》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/05/spring-ru-men-aop-mian-xiang-qie-mian-qie-shi-me-mian/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/06/spring-ru-men-springmvc/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -608,7 +580,7 @@
         repo: 'https://juhaozero.github.io/',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2020/01/05/spring-ru-men-aop-mian-xiang-qie-mian-qie-shi-me-mian/',
+        id: '2020/01/06/spring-ru-men-springmvc/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -896,32 +868,48 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/01/05/spring-ru-men-aop-mian-xiang-qie-mian-qie-shi-me-mian/">
+                <a href="/2020/01/06/spring-ru-men-springmvc/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Spring入门--SpringMVC">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Spring入门--SpringMVC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
-什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
+                            三层架构在了解SpringMVC前我们看一下传统的三层架构
+
+三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
                             </span>
                         <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -932,33 +920,46 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/05/spring-ru-men-kong-zhi-fan-zhuan-shi-shi-me-gui/">
+                <a href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Spring入门--控制反转">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Spring入门--控制反转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            title: Spring入门
-catalog: true
-date: 2020 01-05
-subtitle: 
-header-img: https://img-blog.csdnimg.cn/20191207175647988.jpg?
+                            最近学了Spring 但一直没整理，趁着空档整理一下吧！
+在正式开始Spring的学习前，我们先来认识几个概念
+什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1107,56 +1108,15 @@ header-img: https://img-blog.csdnimg.cn/20191207175647988.jpg?
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2019 WeiYang. All Rights Reserved.
+            &copy; 2019 juhaozero. 以上.
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.9k</span>
+            <span class="white-color">7.9k</span>
             
 
             <br>
-            <span id="sitetime"></span>
-
-            
-            
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/juhaozero" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="https://user.qzone.qq.com/602994954" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
-        <i class="fa fa-qq"></i>
-    </a>
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
-    </a>
-</div>
-    </div>
+   
 </footer>
 
 <div class="progress-bar"></div>
@@ -1205,7 +1165,7 @@ header-img: https://img-blog.csdnimg.cn/20191207175647988.jpg?
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2020, 01, 06, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2019, 12, 30, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-07T07:22:50.160Z</updated>
+  <updated>2020-01-07T01:07:17.332Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>SpringCloud--Eurka注册中心</title>
-    <link href="http://yoursite.com/2020/01/07/springcloud-eurka/"/>
-    <id>http://yoursite.com/2020/01/07/springcloud-eurka/</id>
-    <published>2020-01-07T06:42:34.702Z</published>
-    <updated>2020-01-07T07:22:50.160Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍&lt;br&gt;接下来具体了解一下组件&lt;/p&gt;
-&lt;h2 id=&quot;Eureka注册中心&quot;&gt;&lt;a href=&quot;#Eureka注册中心&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-    
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
-    
-      <category term="SpringCloud" scheme="http://yoursite.com/tags/SpringCloud/"/>
-    
-  </entry>
   
   <entry>
     <title>Spring入门--SpringMVC</title>

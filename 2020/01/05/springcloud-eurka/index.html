@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringCloud--Eurka注册中心, juhaozero的博客">
+    <meta name="keywords" content="SpringCloud--Eurka, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
@@ -17,7 +17,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringCloud--Eurka注册中心 | juhaozero的博客</title>
+    <title>SpringCloud--Eurka | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +275,13 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringCloud--Eurka注册中心
+                        SpringCloud--Eurka
                     </div>
                 </div>
             </div>
@@ -460,7 +460,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 <p>在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍<br>接下来具体了解一下组件</p>
 <h2 id="Eureka注册中心"><a href="#Eureka注册中心" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>微服务的注册中心</strong><br>    服务提供者将服务注册到Eureka注册中心上并定期发送心跳，服务消费者定期从注册中心中拉取服务<br>    做到一个过渡的作用，解决了服务和消费耦合的问题，服务提供者只需注册到注册中心，消费者只需拉取<br>    服务，两者通过注册中心相连，减少了代码的耦合。<strong>举个例子就是卖房APP，服务提供者只需提供卖房的信息服务，消费者只需要定期去App上查看就可以了</strong>。</p>
 <p>心跳：心跳指的是监听服务是否正常进行，当服务提供者往Eureka上注册时，会定期向eureka上发送心跳<br>            Eureka会监听这个心跳，当服务发生错误时，心跳停止发送，Eureka会定期剔除没有发送心跳的服务。<br>        <img src="https://img-blog.csdnimg.cn/20191217165545107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="具体说明"></p>
-<h2 id="Eureka入门"><a href="#Eureka入门" class="headerlink" title="Eureka入门"></a>Eureka入门</h2><p>在Spring的官方文档中有快速开始的说明<br><strong>任何具有@EnableEurekaClient的Spring Boot应用程序都将尝试与http:// localhost:8761上的Eureka服务器联系（eureka.client.serviceUrl.defaultZone的默认值)</strong><br><img src="https://img-blog.csdnimg.cn/20191217171143663.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是说，我们要搭建一个Eureka服务要在启动类上添加@EnableEurekaClient注解即可（eureka的默认端口是8761）</p>
+<h2 id="Eureka入门"><a href="#Eureka入门" class="headerlink" title="Eureka入门"></a>Eureka入门</h2><p>在Spring的官方文档中有快速开始的说明<br><strong>任何具有@EnableEurekaClient的Spring Boot应用程序都将尝试与http:// localhost:8761上的Eureka服务器联系（eureka.client.serviceUrl.defaultZone的默认值)</strong><br><img src="https://img-blog.csdnimg.cn/20191217171143663.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>也就是说，我们要搭建一个Eureka服务要在启动类上添加@EnableEurekaClient注解即可（eureka的默认端口是8761）</p>
 <h2 id="Eureka注册中心-1"><a href="#Eureka注册中心-1" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>添加依赖</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Eureka服务端 <span class="token operator">--</span><span class="token operator">></span>
@@ -525,7 +525,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《SpringCloud--Eurka注册中心》
+                    《SpringCloud--Eurka》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/05/springcloud-eurka/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -855,25 +855,26 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/05/spring-ru-men-aop/">
+                <a href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Spring入门--AOP">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Spring入门--控制反转">
                         
-                        <span class="card-title">Spring入门--AOP</span>
+                        <span class="card-title">Spring入门--控制反转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
-什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
+                            最近学了Spring 但一直没整理，趁着空档整理一下吧！
+在正式开始Spring的学习前，我们先来认识几个概念
+什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
                         </span>
                         <span class="publish-author">
                             
@@ -905,27 +906,25 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/03/springcloud-yi/">
+                <a href="/2020/01/05/spring-ru-men-aop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SpringCloud--入门篇">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Spring入门--AOP">
                         
-                        <span class="card-title">SpringCloud--入门篇</span>
+                        <span class="card-title">Spring入门--AOP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在看SpringCloud之前我们先来了解一下什么是微服务
-微服务维基百科上这样说
-
-微服务 (Microservices)是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务
+                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
+什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
                             </span>
                         <span class="publish-author">
                             
@@ -944,10 +943,6 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                     
                     <a href="/tags/Spring/" target="_blank">
                         <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                    <a href="/tags/SpringCloud/" target="_blank">
-                        <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
                 </div>

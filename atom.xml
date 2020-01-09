@@ -71,6 +71,35 @@
   </entry>
   
   <entry>
+    <title>SpringCloud--Eurka</title>
+    <link href="http://yoursite.com/2020/01/05/springcloud-eurka/"/>
+    <id>http://yoursite.com/2020/01/05/springcloud-eurka/</id>
+    <published>2020-01-04T16:00:00.000Z</published>
+    <updated>2020-01-09T05:04:27.554Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍&lt;br&gt;接下来具体了解一下组件&lt;/p&gt;
+&lt;h2 id=&quot;Eureka注册中心&quot;&gt;&lt;a href=&quot;#Eureka注册中心&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+      <category term="SpringCloud" scheme="http://yoursite.com/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring入门--AOP</title>
     <link href="http://yoursite.com/2020/01/05/spring-ru-men-aop/"/>
     <id>http://yoursite.com/2020/01/05/spring-ru-men-aop/</id>

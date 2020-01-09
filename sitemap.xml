@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/05/springcloud-eurka/</loc>
+    
+    <lastmod>2020-01-09T05:04:27.554Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/01/05/spring-ru-men-aop/</loc>
     
     <lastmod>2020-01-09T04:38:15.470Z</lastmod>

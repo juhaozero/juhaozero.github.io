@@ -4,13 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Spring入门--控制反转, juhaozero的博客">
+    <meta name="keywords" content="Spring入门--SpringMVC, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="最近学了Spring 但一直没整理，趁着空档整理一下吧！
-在正式开始Spring的学习前，我们先来认识几个概念
-什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring">
+    <meta name="description" content="三层架构在了解SpringMVC前我们看一下传统的三层架构
+
+三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Spring入门--控制反转 | juhaozero的博客</title>
+    <title>Spring入门--SpringMVC | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -276,13 +276,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/20200109205619116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Spring入门--控制反转
+                        Spring入门--SpringMVC
                     </div>
                 </div>
             </div>
@@ -417,7 +417,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-06
+                    2019-12-09
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    907
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
                 
@@ -454,143 +454,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学了Spring 但一直没整理，趁着空档整理一下吧！</p>
-<p><strong>在正式开始Spring的学习前，我们先来认识几个概念</strong></p>
-<h3 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h3><p>Spring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！<br>为什么说Spring可以解决Java开发中的所有问题。</p>
-<p> **1. 基于POJO轻量级和最小侵入式开发 通过依赖注入(DI)和面向接口实现松耦合。</p>
-<ol start="2">
-<li>基于切面和惯例进行声明式编程 通过切面和模板减少样板式代码。**</li>
-</ol>
-<p>Spring家族有哪些成员呢？<br>Spring家族常见的项目如下：<br>1）<strong>Spring  Framework (spring框架   IOC  AOP 事务管理，SpringMVC等)</strong><br>2）Spring Security（权限校验）  粗粒力度的权限校验， 细粒力度的权限校验<br>3）Spring  Data( 一统持久层天下  mysql，oracle，mongoDB，solr等 )<br>4）<strong>Spring Boot（简化Spring开发）</strong><br>5）<strong>Spring Cloud（分布式开发)</strong></p>
-<p>当然Spring家族成员不止这些，想了解更多关于Spring的家族成员 <a href="https://spring.io/" target="_blank" rel="noopener">点击这里</a></p>
-<h5 id="在没有Spring前我们是怎么样进行开发的"><a href="#在没有Spring前我们是怎么样进行开发的" class="headerlink" title="在没有Spring前我们是怎么样进行开发的"></a>在没有Spring前我们是怎么样进行开发的</h5><ol>
-<li>首先我们需要一个pojo（实体类对象）</li>
-<li>提供对应的接口 （dao）</li>
-<li>提供接口的实现类 </li>
-<li>提供对应的service  </li>
-<li>提供对应的controller</li>
-</ol>
-<h5 id="这种开发模式好吗？"><a href="#这种开发模式好吗？" class="headerlink" title="这种开发模式好吗？"></a>这种开发模式好吗？</h5><p>在这种情况下service层依赖于dao层，但如果我dao层下改变了那么service层下也要随之改变<br>同上 controller层改变service层也要随着改变。这造成了代码之间的<strong>耦合</strong>，修改起来不方便，<br>有没有解决的方法呢？</p>
-<p><strong>这时Spring的第一个家族成员Spring Framework 就出马了</strong></p>
-<h2 id="程序解耦-控制反转（IOC）"><a href="#程序解耦-控制反转（IOC）" class="headerlink" title="程序解耦-控制反转（IOC）"></a>程序解耦-控制反转（IOC）</h2><p>Spring （Framework）框架拥有7个核心模块，都是为JavaEE开发提供基础功能。<br><img src="https://img-blog.csdnimg.cn/20191207175647988.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Spring  Frameworkss"></p>
+                <h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>在了解SpringMVC前我们看一下传统的三层架构<br><img src="https://img-blog.csdnimg.cn/20191209085710307.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="传统的三层架构"></p>
+<blockquote>
+<p>三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business Logic Layer）、数据访问层（Data access layer）。区分层次的目的即为了“高内聚低耦合”的思想。在软件体系架构设计中，分层式结构是最常见，也是最重要的一种结构。微软推荐的分层式结构一般分为三层，从下至上分别为：数据访问层、业务逻辑层（又或称为领域层）、表示层</p>
+</blockquote>
+<h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC 不是一种技术，而是一种理念</strong><br>  MVC在概念上强调 Model, View, Controller 的分离，各个模块也遵循着由 Controller 来处理消息，Model 掌管数据源，View 负责数据显示的职责分离原则，因此在实现上，MVC 通常会将 MVC 三个部分分离实现。</p>
+<p>MVC包含  </p>
 <ol>
-<li><strong>Spring Core （IOC容器）：创建对象，给对象属性赋值</strong>  </li>
-<li><strong>Spring AOP（面向切面编程）： 事务管理，自定义AOP编程</strong>  </li>
-<li><strong>SpringMVC：Spring提供MVC表现层模块</strong></li>
-<li>Spring ORM ：Spring整合ORM框架（Hibernate/JPA）</li>
-<li>Spring JDBC : 提供JdbcTemplate的，对Jdbc简单封装 </li>
-<li>Spring Web： Spring整合Web（Servlet，Filter）</li>
-<li>Spring Context: 国际化，事件驱动编程</li>
+<li>Model    模型（pojo、dao）</li>
+<li>View           视图 (html/jsp)                </li>
+<li>Controller  控制器     （servlet/filter）)  </li>
 </ol>
-<p><strong>为了解决上面那个问题</strong><br><strong>Spring的核心思想之一：Inversion of Control ,  SpringIOC   诞生了</strong><br>    在以前创建对象都是由我们手动去new出来，现在把这个权利交给了spring的工厂</p>
-<p> <strong>1 把创建对象的权力，由自己创建(new)改为工厂（IOC容器）来创建</strong><br> <strong>2. 最终解决的是创建对象的耦合问题。</strong></p>
-<p>   多说无益，先敲代码，再来解释<br>    首先我们要使用Spring，必须导入Spring的依赖</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span> 
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>spring的核心包<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>context<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">5.0</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-           <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Junit测试<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>junit<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>junit<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">4.12</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-            <span class="token operator">&lt;</span>scope<span class="token operator">></span>test<span class="token operator">&lt;</span><span class="token operator">/</span>scope<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>编写实体类<br><img src="https://img-blog.csdnimg.cn/2019120718403359.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="User实体类"><br>编写applicationContext.xml 配置文件</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--配置创建user对象--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.shelock.entity.User<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>编写测试类</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppTest</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//1.得到spring 的容器 , 读取对应xml文件创建spring的容器。</span>
-        ApplicationContext applicationContext <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">//2. 通过容器获取到对应对象</span>
-        User user <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span> applicationContext<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//需为实体类的名称</span>
-        <span class="token comment" spellcheck="true">//3. 输出对象</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20191207184546205.jpg" alt="结果"></p>
-<p>这样我们的第一个SpringIOC入门案例就到此成功了</p>
-<p>此外Spring还提供了注解的方式创建对象</p>
-<ol>
-<li><p><strong>@Component    创建对象加入容器。一般用于工具类的注解。</strong></p>
-</li>
-<li><p><strong>@Controller： 创建对象加入容器。一般用于表现层的注解。</strong></p>
-</li>
-<li><p><strong>@Service： 创建对象加入容器。一般用于业务层的注解。</strong></p>
-</li>
-<li><p><strong>@Repository：创建对象加入容器。 一般用于持久层的注解</strong></p>
-<p>但要用到注解属性需要在配置文件中开启注解支持<br><img src="https://img-blog.csdnimg.cn/20191207202201127.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"></p>
-</li>
+<p>MVC和三层架构是两个不同的概念，MVC是 （Model-View-Controller），<strong>严格意义上</strong>说这三个加起来以后才是三层架构中的界面层，也就是说，MVC把三层架构中的界面层再度进行了分化，分成了<strong>控制器</strong>、<strong>视图</strong>、<strong>模型</strong>三个部分。</p>
+<p>再简单点说就是： <strong>MVC是三层架构中的界面层的细化</strong></p>
+<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p><strong>什么是SpringMVC</strong></p>
+<p> SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的<strong>轻量级 Web 框架</strong>，<br> Spring MVC 分离了控制器、模型对象、过滤器以及处理程序对象的角色，这种分离让它们更容易进行定制。<br><img src="https://img-blog.csdnimg.cn/20191209095345567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="SpringMVC三层架构"></p>
+<h2 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h2><p>导入依赖</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
+    <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+      <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+      <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>webmvc<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+      <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">5.0</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="配置web-xml（需要有webapp的包）"><a href="#配置web-xml（需要有webapp的包）" class="headerlink" title="配置web.xml（需要有webapp的包）"></a>配置web.xml（需要有webapp的包）</h3><p><img src="https://img-blog.csdnimg.cn/20191209102242122.jpg" alt=" "><br><strong>配置前端控制器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095622241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="前端控制器"><br><strong>配置映射路径</strong><br>/为无<br><img src="https://img-blog.csdnimg.cn/20191209095643832.jpg" alt="映射路径"></p>
+<h3 id="配置SpringMVC-xml"><a href="#配置SpringMVC-xml" class="headerlink" title="配置SpringMVC.xml"></a>配置SpringMVC.xml</h3><p><strong>配置视图解析器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095548879.jpg" alt="视图解析器"><br><img src="https://img-blog.csdnimg.cn/20191209103045296.jpg" alt="在这里插入图片描述"></p>
+<p><strong>Controller控制器</strong><br>我们模拟一个请求<br><img src="https://img-blog.csdnimg.cn/20191209095814652.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Controller控制器"><br>页面（需要在视图解析器的前缀下）<br><img src="https://img-blog.csdnimg.cn/20191209102600333.jpg" alt="jsp页面"><br>success.jsp<br><img src="https://img-blog.csdnimg.cn/20191209095829738.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="页面"><br>配置Tomcat启动，访问（如果配置映射路径时有配置路径）<br><img src="https://img-blog.csdnimg.cn/2019120910191165.jpg" alt="访问"></p>
+<p>到此我们 SpringMVC入门案例就完成了</p>
+<h1 id="SpringMVC的三大组件"><a href="#SpringMVC的三大组件" class="headerlink" title="SpringMVC的三大组件"></a>SpringMVC的三大组件</h1><ol>
+<li>处理器映射器:（HandlerMapping）</li>
+<li>处理器适配器：(HandlerAdapter )</li>
+<li>视图解析器：    (ViewResolver)</li>
 </ol>
-<h3 id="SpringIOC（控制反转）"><a href="#SpringIOC（控制反转）" class="headerlink" title="==SpringIOC（控制反转）=="></a>==SpringIOC（控制反转）==</h3><p>控制反转的思想最核心的地方在于，我们把创建对象的权力交给了Spring，由不使用资源的第三方Spring管理，这可以带来很多好处。<strong>第一，资源的集中管理。第二，降低了使用资源双方的依赖程度，也就是我们说的耦合度。</strong><br>    也就是说创建对象会造成双方之间的依赖程度，那我不去创建对象，由Spring创建对象，Spring没有和我的业务层产生关系，只是作为一个容器，创建对象往Spring容器中放，使用对象往Spring中拿，通过Spring减少了对象之间的耦合。</p>
-<h3 id="SpringIOC容器（Bean标签属性）"><a href="#SpringIOC容器（Bean标签属性）" class="headerlink" title="SpringIOC容器（Bean标签属性）"></a>SpringIOC容器（Bean标签属性）</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>id</td>
-<td>对象的引用名称 ；唯一值</td>
-</tr>
-<tr>
-<td>name</td>
-<td>对象的引用名称；name可以定义多个；相当于别名</td>
-</tr>
-<tr>
-<td>class</td>
-<td>类的全限名</td>
-</tr>
-<tr>
-<td>scope</td>
-<td>bean的设计模式（单例; 多例）</td>
-</tr>
-<tr>
-<td>init-method</td>
-<td>前置方法； 在构造方法执行后执行</td>
-</tr>
-<tr>
-<td>destroy</td>
-<td>销毁方法 在销毁Spring容器前执行</td>
-</tr>
-<tr>
-<td>lazy-init</td>
-<td>延迟加载；只在单例下有效</td>
-</tr>
-</tbody></table>
-<p>现在我们的对象创建都交给了SpringIOC，那我们要给对象赋值该怎么做呢？</p>
-<h2 id="SpringIOC的另一个属性-DI（依赖注入）"><a href="#SpringIOC的另一个属性-DI（依赖注入）" class="headerlink" title="SpringIOC的另一个属性 DI（依赖注入）"></a>SpringIOC的另一个属性 DI（依赖注入）</h2><p><strong>什么是依赖注入(denpendices injection)？</strong><br>    就是给对象的属性赋值</p>
-<p><strong>spring给对象赋予属性值（依赖注入）的方式（3种）</strong></p>
-<ul>
-<li><p>利用带参的构造器给对象属性赋值</p>
-</li>
-<li><p>利用setter方法给对象的属性赋值</p>
-</li>
-<li><p>利用p空间给对象的属性赋值(底层还是依赖Setter方法)。</p>
-</li>
+<p>处理器映射器  ——————  <strong>查找对应的方法</strong><br>处理器适配器  —————— <strong>执行对应的方法</strong><br>视图解析器  ———————  <strong>解析返回值，得到视图路径</strong></p>
+<h3 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h3><ul>
+<li>当用户发出请求后，浏览器会将这个请求交给Web应用服务器（tomcat）</li>
+<li>Web应用服务器会将请求交给 <strong>前端控制器</strong> </li>
+<li><strong>前端控制器</strong>会启动 <strong>处理器映射器</strong> 查找对应的方法</li>
+<li>同时 <strong>前端控制器</strong> 会启动 <strong>处理器适配器</strong> 执行对应的方法（==在映射器找到方法后==）</li>
+<li>得到返回的返回值后会启动<strong>视图解析器</strong>进行加工，得到一个路径，最后请求转发</li>
 </ul>
-<h4 id="带参的构造器（要在实体类中有一个带参的构造器）"><a href="#带参的构造器（要在实体类中有一个带参的构造器）" class="headerlink" title="带参的构造器（要在实体类中有一个带参的构造器）"></a>带参的构造器（要在实体类中有一个带参的构造器）</h4><p>applicationContext<br><img src="https://img-blog.csdnimg.cn/20191207205308658.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="配置文件"><br>测试类<br><img src="https://img-blog.csdnimg.cn/20191207204743804.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="测试类"><br><img src="https://img-blog.csdnimg.cn/2019120720463014.jpg" alt="结果"></p>
-<h3 id="setter方法给对象的属性赋值"><a href="#setter方法给对象的属性赋值" class="headerlink" title="setter方法给对象的属性赋值"></a>setter方法给对象的属性赋值</h3><p>配置文件<br><img src="https://img-blog.csdnimg.cn/20191207205740108.jpg" alt=" "></p>
-<h3 id="p空间给对象的属性赋值-底层还是依赖Setter方法"><a href="#p空间给对象的属性赋值-底层还是依赖Setter方法" class="headerlink" title="p空间给对象的属性赋值(底层还是依赖Setter方法)"></a>p空间给对象的属性赋值(底层还是依赖Setter方法)</h3><p><img src="https://img-blog.csdnimg.cn/20191207210028743.jpg" alt=" "></p>
-<h4 id="同样-依赖注入也同样支持注解"><a href="#同样-依赖注入也同样支持注解" class="headerlink" title="同样 依赖注入也同样支持注解"></a>同样 依赖注入也同样支持注解</h4><p><strong>==@Autowired==<br>注入数据，从IOC容器获取另一个对象来注入。<br>使用前提： spring容器必须存在相同类型的值。<br>可以修饰成员变量，也可以修饰方法</strong></p>
-<p><strong>==@Qualifier==<br>如果想让@Autowired根据指定的对象（别名）名称实现依赖注入，要配置@Qualifier注解</strong></p>
-<p><strong>==@Value==</strong><br><strong>直接给简单类型的字段赋值</strong><br><strong>获取配置文件值</strong></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>关于SpringIOC的控制反转和依赖注入就到处告一段落了<br>有空在更！！！<br>如果文章有错的地方欢迎指正，大家互相交流，互相探讨。</p>
-<h4 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h4><p><a href="https://zhuanlan.zhihu.com/p/29426019" target="_blank" rel="noopener">关于依赖注入</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20191209105052333.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="请求路径"></p>
+<p><strong>推荐阅读</strong><br><a href="https://zhuanlan.zhihu.com/p/42602265" target="_blank" rel="noopener">SpringMVC执行流程</a><br><a href="https://segmentfault.com/a/1190000013816079" target="_blank" rel="noopener">Spring MVC 流程解析</a></p>
+<h2 id="SpringMVC的一些其他配置"><a href="#SpringMVC的一些其他配置" class="headerlink" title="SpringMVC的一些其他配置"></a>SpringMVC的一些其他配置</h2><p><strong>类型转换器</strong><br>![类型转换器</p>
+<p>](<a href="https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70</a>)<br><img src="https://img-blog.csdnimg.cn/20191209105342516.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="类型转换器"><br><strong>解决SpringMVC静态资源无法访问</strong><br><img src="https://img-blog.csdnimg.cn/2019120910535340.jpg" alt="静态资源放行"></p>
+<p><strong>统一的异常处理器</strong></p>
+<p>创建异常类<br><img src="https://img-blog.csdnimg.cn/20191209110029299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="异常类"><br>SpringMVC.xml 中 创建异常管理器<br><img src="https://img-blog.csdnimg.cn/20191209110043437.jpg" alt="异常管理器"></p>
+<p>到这里关于SpringMVC就讲到这里了<br>有空在更！！！！</p>
+<p>如果文章有错的地方欢迎指正。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>推荐阅读<br><a href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247483973&idx=1&sn=dda2252f37e5eb6db90db636a65c40bf&chksm=ebd74344dca0ca52d671fc0fa072bcc80892bfb5801ceaab6a4754036d246f5bef960c1840bd&scene=21###wechat_redirect" target="_blank" rel="noopener">Spring入门就是这么简单</a><br><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/SpringMVC-Principle.md" target="_blank" rel="noopener">Spring入门详解</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200109205619116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
 
             </div>
             <hr />
@@ -625,9 +538,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Spring入门--控制反转》
+                    《Spring入门--SpringMVC》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/09/spring-ru-men-springmvc/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -668,7 +581,7 @@
         repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/',
+        id: '2019/12/09/spring-ru-men-springmvc/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -955,26 +868,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/06/spring-ru-men-springmvc/">
+                <a href="/2019/12/10/spring-ru-men-springboot/">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/20200109205649930.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="Spring入门--SpringBoot">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Spring入门--SpringMVC">
-                        
-                        <span class="card-title">Spring入门--SpringMVC</span>
+                        <span class="card-title">Spring入门--SpringBoot</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三层架构在了解SpringMVC前我们看一下传统的三层架构
+                            SpringBoot什么是SpringBootSpring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化新 Spring 应用的初始搭建以及开发过程。
+SpringBoot的特点
+List item
 
-三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business
+在以前我们
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-10
                         </span>
                         <span class="publish-author">
                             
@@ -1006,11 +920,10 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/05/spring-ru-men-aop/">
+                <a href="/2019/12/08/spring-ru-men-aop/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Spring入门--AOP">
+                        <img src="https://img-blog.csdnimg.cn/2020010920544576.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="Spring入门--AOP">
                         
                         <span class="card-title">Spring入门--AOP</span>
                     </div>
@@ -1024,7 +937,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-08
                             </span>
                         <span class="publish-author">
                             
@@ -1197,7 +1110,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.9k</span>
+            <span class="white-color">9.1k</span>
             
 
             <br>

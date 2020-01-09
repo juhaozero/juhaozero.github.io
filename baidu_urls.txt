@@ -1,6 +1,8 @@
-http://yoursite.com/2020/01/06/spring-ru-men-springmvc/
-http://yoursite.com/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/
-http://yoursite.com/2020/01/05/spring-ru-men-aop/
-http://yoursite.com/2020/01/03/springcloud-yi/
-http://yoursite.com/2020/01/02/spring-ru-men-springboot/
-http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/
+http://yoursite.com/2020/01/01/guan-yu-2020-nian/
+http://yoursite.com/2019/12/31/huan-cun-gai-nian/
+http://yoursite.com/2019/12/11/springcloud-yi/
+http://yoursite.com/2019/12/11/spring-ru-men-hystrix-rong-duan-qi-he-ribbon-fu-zai-jun-heng/
+http://yoursite.com/2019/12/10/spring-ru-men-springboot/
+http://yoursite.com/2019/12/09/spring-ru-men-springmvc/
+http://yoursite.com/2019/12/08/spring-ru-men-aop/
+http://yoursite.com/2019/12/07/spring-ru-men-kong-zhi-fan-zhuan/

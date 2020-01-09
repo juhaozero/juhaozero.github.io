@@ -4,13 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Spring入门--SpringMVC, juhaozero的博客">
+    <meta name="keywords" content="关于2020年, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="三层架构在了解SpringMVC前我们看一下传统的三层架构
-
-三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business">
+    <meta name="description" content="写在前面最近在找工作，不知道是大环境的问题还是自身的问题，工作是越来越难找了，2019年抽空对之前学过的一些技术做了小小的总结，感觉自己还是一个小白，生活会越来越好吧！也说不定嘛！
+关于2020年希望就是可以快点找到工作咯！也对自己的负责！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Spring入门--SpringMVC | juhaozero的博客</title>
+    <title>关于2020年 | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -276,13 +275,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Spring入门--SpringMVC
+                        关于2020年
                     </div>
                 </div>
             </div>
@@ -393,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Spring/" target="_blank">
-                            <span class="chip bg-color">Spring</span>
+                        <a href="/tags/随笔/" target="_blank">
+                            <span class="chip bg-color">随笔</span>
                         </a>
                         
                     </div>
@@ -405,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Java/" class="post-category" target="_blank">
-                            Java
+                        <a href="/categories/其他/" class="post-category" target="_blank">
+                            其他
                         </a>
                         
                     </div>
@@ -417,7 +416,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-06
+                    2020-01-01
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -431,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    907
+                    248
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -454,55 +453,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>在了解SpringMVC前我们看一下传统的三层架构<br><img src="https://img-blog.csdnimg.cn/20191209085710307.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="传统的三层架构"></p>
-<blockquote>
-<p>三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business Logic Layer）、数据访问层（Data access layer）。区分层次的目的即为了“高内聚低耦合”的思想。在软件体系架构设计中，分层式结构是最常见，也是最重要的一种结构。微软推荐的分层式结构一般分为三层，从下至上分别为：数据访问层、业务逻辑层（又或称为领域层）、表示层</p>
-</blockquote>
-<h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC 不是一种技术，而是一种理念</strong><br>  MVC在概念上强调 Model, View, Controller 的分离，各个模块也遵循着由 Controller 来处理消息，Model 掌管数据源，View 负责数据显示的职责分离原则，因此在实现上，MVC 通常会将 MVC 三个部分分离实现。</p>
-<p>MVC包含  </p>
-<ol>
-<li>Model    模型（pojo、dao）</li>
-<li>View           视图 (html/jsp)                </li>
-<li>Controller  控制器     （servlet/filter）)  </li>
-</ol>
-<p>MVC和三层架构是两个不同的概念，MVC是 （Model-View-Controller），<strong>严格意义上</strong>说这三个加起来以后才是三层架构中的界面层，也就是说，MVC把三层架构中的界面层再度进行了分化，分成了<strong>控制器</strong>、<strong>视图</strong>、<strong>模型</strong>三个部分。</p>
-<p>再简单点说就是： <strong>MVC是三层架构中的界面层的细化</strong></p>
-<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p><strong>什么是SpringMVC</strong></p>
-<p> SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的<strong>轻量级 Web 框架</strong>，<br> Spring MVC 分离了控制器、模型对象、过滤器以及处理程序对象的角色，这种分离让它们更容易进行定制。<br><img src="https://img-blog.csdnimg.cn/20191209095345567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="SpringMVC三层架构"></p>
-<h2 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h2><p>导入依赖</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
-    <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-      <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-      <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>webmvc<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-      <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">5.0</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="配置web-xml（需要有webapp的包）"><a href="#配置web-xml（需要有webapp的包）" class="headerlink" title="配置web.xml（需要有webapp的包）"></a>配置web.xml（需要有webapp的包）</h3><p><img src="https://img-blog.csdnimg.cn/20191209102242122.jpg" alt=" "><br><strong>配置前端控制器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095622241.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="前端控制器"><br><strong>配置映射路径</strong><br>/为无<br><img src="https://img-blog.csdnimg.cn/20191209095643832.jpg" alt="映射路径"></p>
-<h3 id="配置SpringMVC-xml"><a href="#配置SpringMVC-xml" class="headerlink" title="配置SpringMVC.xml"></a>配置SpringMVC.xml</h3><p><strong>配置视图解析器</strong><br><img src="https://img-blog.csdnimg.cn/20191209095548879.jpg" alt="视图解析器"><br><img src="https://img-blog.csdnimg.cn/20191209103045296.jpg" alt="在这里插入图片描述"></p>
-<p><strong>Controller控制器</strong><br>我们模拟一个请求<br><img src="https://img-blog.csdnimg.cn/20191209095814652.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Controller控制器"><br>页面（需要在视图解析器的前缀下）<br><img src="https://img-blog.csdnimg.cn/20191209102600333.jpg" alt="jsp页面"><br>success.jsp<br><img src="https://img-blog.csdnimg.cn/20191209095829738.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="页面"><br>配置Tomcat启动，访问（如果配置映射路径时有配置路径）<br><img src="https://img-blog.csdnimg.cn/2019120910191165.jpg" alt="访问"></p>
-<p>到此我们 SpringMVC入门案例就完成了</p>
-<h1 id="SpringMVC的三大组件"><a href="#SpringMVC的三大组件" class="headerlink" title="SpringMVC的三大组件"></a>SpringMVC的三大组件</h1><ol>
-<li>处理器映射器:（HandlerMapping）</li>
-<li>处理器适配器：(HandlerAdapter )</li>
-<li>视图解析器：    (ViewResolver)</li>
-</ol>
-<p>处理器映射器  ——————  <strong>查找对应的方法</strong><br>处理器适配器  —————— <strong>执行对应的方法</strong><br>视图解析器  ———————  <strong>解析返回值，得到视图路径</strong></p>
-<h3 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h3><ul>
-<li>当用户发出请求后，浏览器会将这个请求交给Web应用服务器（tomcat）</li>
-<li>Web应用服务器会将请求交给 <strong>前端控制器</strong> </li>
-<li><strong>前端控制器</strong>会启动 <strong>处理器映射器</strong> 查找对应的方法</li>
-<li>同时 <strong>前端控制器</strong> 会启动 <strong>处理器适配器</strong> 执行对应的方法（==在映射器找到方法后==）</li>
-<li>得到返回的返回值后会启动<strong>视图解析器</strong>进行加工，得到一个路径，最后请求转发</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191209105052333.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="请求路径"></p>
-<p><strong>推荐阅读</strong><br><a href="https://zhuanlan.zhihu.com/p/42602265" target="_blank" rel="noopener">SpringMVC执行流程</a><br><a href="https://segmentfault.com/a/1190000013816079" target="_blank" rel="noopener">Spring MVC 流程解析</a></p>
-<h2 id="SpringMVC的一些其他配置"><a href="#SpringMVC的一些其他配置" class="headerlink" title="SpringMVC的一些其他配置"></a>SpringMVC的一些其他配置</h2><p><strong>类型转换器</strong><br>![类型转换器</p>
-<p>](<a href="https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20191209105251572.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70</a>)<br><img src="https://img-blog.csdnimg.cn/20191209105342516.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="类型转换器"><br><strong>解决SpringMVC静态资源无法访问</strong><br><img src="https://img-blog.csdnimg.cn/2019120910535340.jpg" alt="静态资源放行"></p>
-<p><strong>统一的异常处理器</strong></p>
-<p>创建异常类<br><img src="https://img-blog.csdnimg.cn/20191209110029299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="异常类"><br>SpringMVC.xml 中 创建异常管理器<br><img src="https://img-blog.csdnimg.cn/20191209110043437.jpg" alt="异常管理器"></p>
-<p>到这里关于SpringMVC就讲到这里了<br>有空在更！！！！</p>
-<p>如果文章有错的地方欢迎指正。</p>
-<p>最后<br>推荐阅读<br><a href="https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&mid=2247483973&idx=1&sn=dda2252f37e5eb6db90db636a65c40bf&chksm=ebd74344dca0ca52d671fc0fa072bcc80892bfb5801ceaab6a4754036d246f5bef960c1840bd&scene=21###wechat_redirect" target="_blank" rel="noopener">Spring入门就是这么简单</a><br><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/SpringMVC-Principle.md" target="_blank" rel="noopener">Spring入门详解</a></p>
+                <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近在找工作，不知道是大环境的问题还是自身的问题，工作是越来越难找了，2019年抽空对之前学过的一些技术做了小小的总结，感觉自己还是一个小白，生活会越来越好吧！也说不定嘛！</p>
+<h2 id="关于2020年"><a href="#关于2020年" class="headerlink" title="关于2020年"></a>关于2020年</h2><p>希望就是可以快点找到工作咯！也对自己的负责！关于技术方面，感觉自己学的技术还是入门级别<br>希望可以快点成长，看懂一些更底层的东西！2019年真是奇奇怪怪的一年！社会发展真是越来越快了！<br>一不小心可就要被淘汰了呀！！！嘛，说不定也是件好事咯！<br><img src="https://img-blog.csdnimg.cn/20200104120659261.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
+<h6 id="2020年没有时光机，没有赛博朋克，也没有飘着天空上的汽车-2020年也许真的是个好年也说不定呀！"><a href="#2020年没有时光机，没有赛博朋克，也没有飘着天空上的汽车-2020年也许真的是个好年也说不定呀！" class="headerlink" title="2020年没有时光机，没有赛博朋克，也没有飘着天空上的汽车,2020年也许真的是个好年也说不定呀！"></a><font color="#4A708B">2020年没有时光机，没有赛博朋克，也没有飘着天空上的汽车,2020年也许真的是个好年也说不定呀！</font></h6><h6 id="新的一年，扩充自己的知识，改变思想，提升能力"><a href="#新的一年，扩充自己的知识，改变思想，提升能力" class="headerlink" title="新的一年，扩充自己的知识，改变思想，提升能力"></a><font color="#4A708B">新的一年，扩充自己的知识，改变思想，提升能力</font></h6><h3 id="2020-冲冲冲"><a href="#2020-冲冲冲" class="headerlink" title="2020 冲冲冲"></a>2020 冲冲冲</h3><p><img src="https://img-blog.csdnimg.cn/20200104122059955.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
 
             </div>
             <hr />
@@ -537,9 +490,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Spring入门--SpringMVC》
+                    《关于2020年》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/06/spring-ru-men-springmvc/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/01/guan-yu-2020-nian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -580,7 +533,7 @@
         repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2020/01/06/spring-ru-men-springmvc/',
+        id: '2020/01/01/guan-yu-2020-nian/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -868,33 +821,32 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/01/06/spring-ru-men-springmvc/">
+                <a href="/2020/01/01/guan-yu-2020-nian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Spring入门--SpringMVC">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="关于2020年">
                         
-                        <span class="card-title">Spring入门--SpringMVC</span>
+                        <span class="card-title">关于2020年</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三层架构在了解SpringMVC前我们看一下传统的三层架构
-
-三层架构(3-tier architecture) 通常意义上的三层架构就是将整个业务应用划分为：界面层（User Interface layer）、业务逻辑层（Business
+                            写在前面最近在找工作，不知道是大环境的问题还是自身的问题，工作是越来越难找了，2019年抽空对之前学过的一些技术做了小小的总结，感觉自己还是一个小白，生活会越来越好吧！也说不定嘛！
+关于2020年希望就是可以快点找到工作咯！也对自己的负责！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="/categories/其他/" class="post-category" target="_blank">
+                                    其他
                                 </a>
                             
                             
@@ -905,8 +857,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -920,26 +872,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/">
+                <a href="/2019/12/31/huan-cun-gai-nian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Spring入门--控制反转">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Redis缓存概念">
                         
-                        <span class="card-title">Spring入门--控制反转</span>
+                        <span class="card-title">Redis缓存概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近学了Spring 但一直没整理，趁着空档整理一下吧！
-在正式开始Spring的学习前，我们先来认识几个概念
-什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring
+                            缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
+解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-31
                             </span>
                         <span class="publish-author">
                             
@@ -956,8 +907,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/缓存/" target="_blank">
+                        <span class="chip bg-color">缓存</span>
                     </a>
                     
                 </div>
@@ -1112,7 +1063,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.9k</span>
+            <span class="white-color">9.1k</span>
             
 
             <br>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-07T01:07:17.332Z</updated>
+  <updated>2020-01-09T13:29:53.768Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spring入门--SpringMVC</title>
-    <link href="http://yoursite.com/2020/01/06/spring-ru-men-springmvc/"/>
-    <id>http://yoursite.com/2020/01/06/spring-ru-men-springmvc/</id>
-    <published>2020-01-05T16:00:00.000Z</published>
-    <updated>2020-01-07T01:07:17.332Z</updated>
+    <title>关于2020年</title>
+    <link href="http://yoursite.com/2020/01/01/guan-yu-2020-nian/"/>
+    <id>http://yoursite.com/2020/01/01/guan-yu-2020-nian/</id>
+    <published>2019-12-31T16:00:00.000Z</published>
+    <updated>2020-01-09T13:29:53.768Z</updated>
     
     <summary type="html">
     
@@ -29,25 +29,25 @@
       
         
         
-          &lt;h2 id=&quot;三层架构&quot;&gt;&lt;a href=&quot;#三层架构&quot; class=&quot;headerlink&quot; title=&quot;三层架构&quot;&gt;&lt;/a&gt;三层架构&lt;/h2&gt;&lt;p&gt;在了解SpringMVC前我们看一下传统的三层架构&lt;br&gt;&lt;img
+          &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title>Spring入门--控制反转</title>
-    <link href="http://yoursite.com/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/"/>
-    <id>http://yoursite.com/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/</id>
-    <published>2020-01-05T16:00:00.000Z</published>
-    <updated>2020-01-07T01:11:27.180Z</updated>
+    <title>Redis缓存概念</title>
+    <link href="http://yoursite.com/2019/12/31/huan-cun-gai-nian/"/>
+    <id>http://yoursite.com/2019/12/31/huan-cun-gai-nian/</id>
+    <published>2019-12-30T16:00:00.000Z</published>
+    <updated>2020-01-09T13:32:56.939Z</updated>
     
     <summary type="html">
     
@@ -55,9 +55,7 @@
       
         
         
-          &lt;p&gt;最近学了Spring 但一直没整理，趁着空档整理一下吧！&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在正式开始Spring的学习前，我们先来认识几个概念&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;什么是Spring&quot;&gt;&lt;a href=&quot;#什么是Spring&quot;
+          &lt;h2 id=&quot;缓存穿透&quot;&gt;&lt;a href=&quot;#缓存穿透&quot; class=&quot;headerlink&quot; title=&quot;缓存穿透&quot;&gt;&lt;/a&gt;缓存穿透&lt;/h2&gt;&lt;h3 id=&quot;概念：&quot;&gt;&lt;a href=&quot;#概念：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -66,42 +64,16 @@
       <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
     
     
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring入门--AOP</title>
-    <link href="http://yoursite.com/2020/01/05/spring-ru-men-aop/"/>
-    <id>http://yoursite.com/2020/01/05/spring-ru-men-aop/</id>
-    <published>2020-01-04T16:00:00.000Z</published>
-    <updated>2020-01-09T08:54:11.717Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringAOP&quot;&gt;&lt;a href=&quot;#SpringAOP&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-    
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+      <category term="缓存" scheme="http://yoursite.com/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>SpringCloud--入门篇</title>
-    <link href="http://yoursite.com/2020/01/03/springcloud-yi/"/>
-    <id>http://yoursite.com/2020/01/03/springcloud-yi/</id>
-    <published>2020-01-02T16:00:00.000Z</published>
-    <updated>2020-01-07T06:43:38.523Z</updated>
+    <link href="http://yoursite.com/2019/12/11/springcloud-yi/"/>
+    <id>http://yoursite.com/2019/12/11/springcloud-yi/</id>
+    <published>2019-12-10T16:00:00.000Z</published>
+    <updated>2020-01-09T13:07:14.531Z</updated>
     
     <summary type="html">
     
@@ -126,11 +98,39 @@
   </entry>
   
   <entry>
+    <title>SpringCloud--Hystrix与Ribbon</title>
+    <link href="http://yoursite.com/2019/12/11/spring-ru-men-hystrix-rong-duan-qi-he-ribbon-fu-zai-jun-heng/"/>
+    <id>http://yoursite.com/2019/12/11/spring-ru-men-hystrix-rong-duan-qi-he-ribbon-fu-zai-jun-heng/</id>
+    <published>2019-12-10T16:00:00.000Z</published>
+    <updated>2020-01-09T13:26:42.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Hystrix（熔断器）&quot;&gt;&lt;a href=&quot;#Hystrix（熔断器）&quot; class=&quot;headerlink&quot; title=&quot;Hystrix（熔断器）&quot;&gt;&lt;/a&gt;Hystrix（熔断器）&lt;/h2&gt;&lt;h3 id=&quot;什么是Hystrix（熔断器）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+      <category term="SpringCloud" scheme="http://yoursite.com/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring入门--SpringBoot</title>
-    <link href="http://yoursite.com/2020/01/02/spring-ru-men-springboot/"/>
-    <id>http://yoursite.com/2020/01/02/spring-ru-men-springboot/</id>
-    <published>2020-01-01T16:00:00.000Z</published>
-    <updated>2020-01-07T01:20:39.553Z</updated>
+    <link href="http://yoursite.com/2019/12/10/spring-ru-men-springboot/"/>
+    <id>http://yoursite.com/2019/12/10/spring-ru-men-springboot/</id>
+    <published>2019-12-09T16:00:00.000Z</published>
+    <updated>2020-01-09T13:06:19.695Z</updated>
     
     <summary type="html">
     
@@ -152,11 +152,11 @@
   </entry>
   
   <entry>
-    <title>缓存常见概念</title>
-    <link href="http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/"/>
-    <id>http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</id>
-    <published>2019-12-30T16:00:00.000Z</published>
-    <updated>2020-01-09T04:37:57.712Z</updated>
+    <title>Spring入门--SpringMVC</title>
+    <link href="http://yoursite.com/2019/12/09/spring-ru-men-springmvc/"/>
+    <id>http://yoursite.com/2019/12/09/spring-ru-men-springmvc/</id>
+    <published>2019-12-08T16:00:00.000Z</published>
+    <updated>2020-01-09T13:06:51.266Z</updated>
     
     <summary type="html">
     
@@ -164,7 +164,7 @@
       
         
         
-          &lt;h2 id=&quot;缓存穿透&quot;&gt;&lt;a href=&quot;#缓存穿透&quot; class=&quot;headerlink&quot; title=&quot;缓存穿透&quot;&gt;&lt;/a&gt;缓存穿透&lt;/h2&gt;&lt;h3 id=&quot;概念：&quot;&gt;&lt;a href=&quot;#概念：&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;三层架构&quot;&gt;&lt;a href=&quot;#三层架构&quot; class=&quot;headerlink&quot; title=&quot;三层架构&quot;&gt;&lt;/a&gt;三层架构&lt;/h2&gt;&lt;p&gt;在了解SpringMVC前我们看一下传统的三层架构&lt;br&gt;&lt;img
         
       
     
@@ -173,7 +173,61 @@
       <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
     
     
-      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring入门--AOP</title>
+    <link href="http://yoursite.com/2019/12/08/spring-ru-men-aop/"/>
+    <id>http://yoursite.com/2019/12/08/spring-ru-men-aop/</id>
+    <published>2019-12-07T16:00:00.000Z</published>
+    <updated>2020-01-09T13:06:30.247Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringAOP&quot;&gt;&lt;a href=&quot;#SpringAOP&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring入门--控制反转</title>
+    <link href="http://yoursite.com/2019/12/07/spring-ru-men-kong-zhi-fan-zhuan/"/>
+    <id>http://yoursite.com/2019/12/07/spring-ru-men-kong-zhi-fan-zhuan/</id>
+    <published>2019-12-06T16:00:00.000Z</published>
+    <updated>2020-01-09T13:05:13.682Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近学了Spring 但一直没整理，趁着空档整理一下吧！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在正式开始Spring的学习前，我们先来认识几个概念&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;什么是Spring&quot;&gt;&lt;a href=&quot;#什么是Spring&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
     
   </entry>
   

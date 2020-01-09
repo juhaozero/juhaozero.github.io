@@ -4,12 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Spring入门--AOP, juhaozero的博客">
+    <meta name="keywords" content="SpringCloud--入门篇, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
-什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能">
+    <meta name="description" content="在看SpringCloud之前我们先来了解一下什么是微服务
+微服务维基百科上这样说
+
+微服务 (Microservices)是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Spring入门--AOP | juhaozero的博客</title>
+    <title>SpringCloud--入门篇 | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +277,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/20200109205959220.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Spring入门--AOP
+                        SpringCloud--入门篇
                     </div>
                 </div>
             </div>
@@ -396,6 +398,10 @@
                             <span class="chip bg-color">Spring</span>
                         </a>
                         
+                        <a href="/tags/SpringCloud/" target="_blank">
+                            <span class="chip bg-color">SpringCloud</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -416,7 +422,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-05
+                    2019-12-11
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -430,14 +436,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    972
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
                 
@@ -453,97 +459,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SpringAOP"><a href="#SpringAOP" class="headerlink" title="SpringAOP"></a>SpringAOP</h1><p>了解SpringAOP之前，我们先要了解一些关于<strong>代理</strong>的概念</p>
-<h3 id="什么是代理"><a href="#什么是代理" class="headerlink" title="什么是代理"></a>什么是代理</h3><p>代理(Proxy)是一种<strong>设计模式</strong>,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:<strong>可以在目标对象实现的基础上,增强额外的功能操作,即扩展目标对象的功能</strong></p>
-<p>简单点说 就是在不修改代码的情况下，对原有的一些功能进行增强。举个例子，当我们想吃饭时，以前我们会买菜，做饭，而现在我们只需要在点餐App上下单即可，外卖小哥就会将饭菜打包到我们这里来，我们省去了买菜，做饭这些时间，转而由饭店为我们代劳（差不多就是这个意思）。</p>
-<h3 id="动态代理模式"><a href="#动态代理模式" class="headerlink" title="动态代理模式"></a>动态代理模式</h3><p><img src="https://img-blog.csdnimg.cn/20191208093533313.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="动态代理模式"><br>Java代理有三种</p>
-<ol>
-<li>静态代理 </li>
-<li>proxy类动态代理 </li>
-<li>cglib代理</li>
-</ol>
-<h1 id="proxy动态代理和cglib代理"><a href="#proxy动态代理和cglib代理" class="headerlink" title="proxy动态代理和cglib代理"></a>proxy动态代理和cglib代理</h1><h3 id="proxy实现动态代理"><a href="#proxy实现动态代理" class="headerlink" title="proxy实现动态代理"></a>proxy实现动态代理</h3><p>创建一个Service接口 并实现接口（<strong>Proxy要求被代理对象必须要实现接口</strong>）<br><img src="https://img-blog.csdnimg.cn/20191208093852764.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>proxy实现动态代理,实现打印日志<br><img src="https://img-blog.csdnimg.cn/20191208094045816.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Poxy"><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208094903531.jpg" alt=" "><br><img src="https://img-blog.csdnimg.cn/20191208094912218.jpg" alt=" "></p>
-<h3 id="cglib代理"><a href="#cglib代理" class="headerlink" title="cglib代理"></a>cglib代理</h3><p><strong>cglib代理模拟事务的开启和关闭</strong><br><img src="https://img-blog.csdnimg.cn/20191208095244801.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>测试结果<br><img src="https://img-blog.csdnimg.cn/20191208095414381.jpg" alt="结果"><br>proxy动态代理和cglib代理不同点在于<br><strong>==Poxy需要实现接口，cglib可以没有实现如何接口，只需要该类不是final修饰的即可==</strong></p>
-<p>代理模式差不多讲到这里，感兴趣的可以往深处了解<br>推荐阅读<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-proxy-pattern/index.html" target="_blank" rel="noopener">代理模式原理及实例讲解</a><br><a href="https://www.cnblogs.com/cenyu/p/6289209.html" target="_blank" rel="noopener">三种代理模式</a></p>
-<h3 id="Spring-AOP-简介"><a href="#Spring-AOP-简介" class="headerlink" title="Spring AOP 简介"></a>Spring AOP 简介</h3><p>如果说 SpringIOC 是 Spring 的核心，<br>那么SpringAOP即面向切面编程就是 Spring 最为重要的功能之一</p>
-<h5 id="什么是SpringAOP"><a href="#什么是SpringAOP" class="headerlink" title="什么是SpringAOP"></a>什么是SpringAOP</h5><p>所谓面向切面编程，就是我希望在目标对象（有无接口都可以）上扩展原有代码的功能，但可以在不修改源码的基础上来完成！，这听起来是不是有点耳熟，这不就是代理嘛！<br>SpringAOP是基于代理进行的。那什么是面向切面编程呢？？</p>
-<p>百度百科上是这样介绍的</p>
+                <p>在看SpringCloud之前我们先来了解一下什么是<strong>微服务</strong></p>
+<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>维基百科上这样说</p>
 <blockquote>
-<p>可以通过预编译方式和运行期动态代理实现在不修改源代码的情况下给程序动态统一添加功能的一种技术。AOP实际是GoF设计模式的延续，设计模式孜孜不倦追求的是调用者和被调用者之间的解耦,提高代码的灵活性和可扩展性，AOP可以说也是这种目标的一种实现。<br>    在Spring中提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
+<p>微服务 (Microservices)<br>是一种<strong>软件架构风格</strong>，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务是一种以业务功能为主的服务设计概念，每一个服务都具有自主运行的业务功能，对外开放不受语言限制的 API (最常用的是 HTTP)，应用程序则是由一个或多个微服务组成。</p>
 </blockquote>
-<p>简单点说AOP实现了 ==通用的<strong>非核心</strong>业务逻辑，从<strong>核心</strong>业务逻辑中进行抽离==</p>
-<p>举个简单例子：如果我们要做日志的管理，那我们需要在每一行的业务代码上添加日志管理的代码，但这造成了代码之间的耦合，但如果有一天我们不需要日志管理这个业务，我们又需要往业务代码上注释日志管理的代码，这样显然是不够方便的，我们就可以利用AOP进行编程.</p>
-<h3 id="SpringAOP的概念"><a href="#SpringAOP的概念" class="headerlink" title="SpringAOP的概念"></a>SpringAOP的概念</h3><ol>
-<li>连接点（jointPoint）  被代理对象的所有方法，即被代理的类下的方法</li>
-<li>切入点（Poincut）被增强的方法就是切入点，即需要在哪个方法下添加其他业务逻辑</li>
-<li>通知（Advice） 增强的代码，即非核心业务逻辑</li>
-<li>切面（Apsect） 切面 = 通知+ 切入点</li>
-<li>目标对象（Target）被代理对象 </li>
-<li>代理对象 (Proxy) </li>
-</ol>
-<h3 id="Aop编程通知类型"><a href="#Aop编程通知类型" class="headerlink" title="Aop编程通知类型"></a>Aop编程通知类型</h3><p><strong>前置通知 (aop:before)</strong><br>在执行目标对象方法之前执行 </p>
-<p><strong>后置通知 (aop:after-returning)</strong><br>在执行目标对象方法之后执行 (异常不执行) </p>
-<p><strong>异常通知(aop:after-throwing)</strong><br>在执行目标对象方法里面发生异常时候执行 </p>
-<p><strong>最终通知（aop:after）</strong><br>在执行完目标对象方法后始终执行的方法就是最终通知(异常也执行) </p>
-<p><strong>环绕通知 (aop:around)</strong><br>自定义如何执行目标方法  </p>
-<p>了解了这几个概念后我们就可以来写我们的SpringAOP的第一个入门案例了</p>
-<h4 id="XMl实现SpringAOP"><a href="#XMl实现SpringAOP" class="headerlink" title="XMl实现SpringAOP"></a>XMl实现SpringAOP</h4><p>导入依赖</p>
-<pre><code>   &lt;dependencies&gt;
-        &lt;!--spring核心包--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!--springaop编程的相关依赖； aop, 切点表达式的依赖： aspectjweaver--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;!--切入点表达式--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
-            &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
-            &lt;version&gt;1.8.13&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;dependency&gt;
-            &lt;groupId&gt;junit&lt;/groupId&gt;
-            &lt;artifactId&gt;junit&lt;/artifactId&gt;
-            &lt;version&gt;4.12&lt;/version&gt;
-        &lt;/dependency&gt;
-
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
-            &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-
-    &lt;/dependencies&gt;</code></pre><p>写一个Service<br><img src="https://img-blog.csdnimg.cn/20191208103853228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="service"><br>写一个日志类，模拟事务的开启，关闭，回滚<br><img src="https://img-blog.csdnimg.cn/20191208103840400.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="Log"></p>
-<p><img src="https://img-blog.csdnimg.cn/20191208104619402.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
-<h3 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h3><p>在上面的案例中我们使用了切入点表达式<br>什么是切入点表达式呢?<br><strong>切入点表达式：（用于声明要在目标对象的哪些方法进行切入通知！！）</strong><br><img src="https://img-blog.csdnimg.cn/20191208105950588.jpg" alt=" "><br> execution( 修饰符 返回值类型 包路径.类名称.方法名称( 参数列表类型 )  )</p>
-<ol>
-<li>execution(): 表达式主体。  </li>
-<li>第一个<em>号：表示返回类型， </em>号表示所有的类型。</li>
-<li>包名：表示需要拦截的包名，后面的两个句点表示当前包和当前包的所有子包，com.shelock.service.impl.AccountServiceImpl下的包、子孙包下所有类的方法。</li>
-<li>第二个<em>号：表示类名，</em>号表示所有的类。</li>
-<li><em>(..):最后这个星号表示方法名，</em>号表示所有的方法，后面括弧里面表示方法的参数，两个句点表示任何参数。</li>
-</ol>
-<h3 id="通知类型"><a href="#通知类型" class="headerlink" title="通知类型"></a>通知类型</h3><pre><code> &lt;aop:around&gt; &lt;!-- 环绕通知--&gt;
- &lt;aop:before&gt; &lt;!-- 前置通知--&gt;
- &lt;aop:after-returningr&gt; &lt;!-- 后置通知--&gt;
- &lt;aop:after&gt; &lt;!-- 最终通知--&gt;
- &lt;aop:after-throwing&gt; &lt;!--异常通知--&gt;</code></pre><p>如果我们想在方法前面添加业务逻辑，我们就可以使用前置通知，其他同理。</p>
-<h4 id="注解实现SpringAOP"><a href="#注解实现SpringAOP" class="headerlink" title="注解实现SpringAOP"></a>注解实现SpringAOP</h4><p>Spring也提供了注解实现<br><strong>xml文件</strong></p>
-<p>需要在配置文件上开启注解扫描<br><img src="https://img-blog.csdnimg.cn/20191208111926122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="注解扫描"><br>配置切面类<br><img src="https://img-blog.csdnimg.cn/20191208112434501.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="切面类"><br>同理<br>通知类型</p>
-<pre><code>@After    //最终通知
-@AfterReturning     //后置通知
-@AfterThrowing        //异常通知
-@Before            //前置通知</code></pre><p>到这里关于SpringAOP就讲到这里了<br>有空在更！！！！</p>
-<p>如果文章有错的地方欢迎指正。</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><p><a href="https://juejin.im/post/5b06bf2df265da0de2574ee1" target="_blank" rel="noopener">Spring AOP就是这么简单啦</a><br><a href="https://blog.csdn.net/corbin_zhang/article/details/80576809" target="_blank" rel="noopener"><br>AspectJ的切入点表达式</a></p>
+<p>也就是说 我们将我们的服务拆分成更小 每个服务相互独立 只需暴露接口，两者毫不相干，只通过接口进行调用。<br>当我们用上微服务之后，我们只需关心每个业务的接口之间的调用即可。  每个服务都是独立的组件，可复用，可替换，降低耦合，易维护。常见的微服务架构有  dubbo、Kubernetes、SpringCloud</p>
+<h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><p><img src="https://img-blog.csdnimg.cn/20191211101532620.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>SpringCloud是Spring的子项目</p>
+<p>SpringCloud整合了市面流行的技术：集成了配置管理，服务发现，智能路由，负载均衡，熔断器，控制总线，集群状态等等功能。</p>
+<p>主要组件有</p>
+<h1 id="SpringCloudNetflix"><a href="#SpringCloudNetflix" class="headerlink" title="SpringCloudNetflix"></a>SpringCloudNetflix</h1><p><img src="https://img-blog.csdnimg.cn/20191211102225612.jpg" alt="netfix"><br>SpringCloudNetflix：<strong>与Netflix的各种OSS组件集成(==Eureka==, ==Hystrix==, , Archaius等)</strong>。</p>
+<p>这个组件下集成了Spring的核心功能<br><img src="https://img-blog.csdnimg.cn/20191211102649367.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+<h4 id="Netflix-Eureka（服务中心）"><a href="#Netflix-Eureka（服务中心）" class="headerlink" title="Netflix Eureka（服务中心）"></a>Netflix Eureka（服务中心）</h4><p>服务中心：微服务的注册中心</p>
+<h4 id="Netflix-Hystrix（熔断器）"><a href="#Netflix-Hystrix（熔断器）" class="headerlink" title="Netflix Hystrix（熔断器）"></a>Netflix Hystrix（熔断器）</h4><p>熔断器：当服务发生错误时，隔离访问远程服务、第三方库，防止出现级联失败。</p>
+<h4 id="Netflix-Zuul（智能路由）"><a href="#Netflix-Zuul（智能路由）" class="headerlink" title="Netflix Zuul（智能路由）"></a>Netflix Zuul（智能路由）</h4><p>智能路由：当访问服务时经过，相当于服务的转发。</p>
+<h4 id="Netflix-Ribbon（客户端负载均衡）"><a href="#Netflix-Ribbon（客户端负载均衡）" class="headerlink" title="Netflix Ribbon（客户端负载均衡）"></a>Netflix Ribbon（客户端负载均衡）</h4><p>负载均衡： 在集群的条件下，实现对服务器访问的分配</p>
+<h1 id="Spring-Cloud-Gateway（网关）"><a href="#Spring-Cloud-Gateway（网关）" class="headerlink" title="Spring Cloud Gateway（网关）"></a>Spring Cloud Gateway（网关）</h1><p><img src="https://img-blog.csdnimg.cn/20191211105157625.jpg" alt=" "><br>该项目提供了一个用于在Spring MVC之上构建API网关的库。 Spring Cloud Gateway旨在提供一种简单而有效的方法来路由到API，并为它们提供跨领域的关注，例如：安全性，监视/指标和弹性。<br><strong>网关中也包含了路由，即使用了网关就无需配置Zuul。</strong></p>
+<h1 id="Spring-Cloud-Config（配置中心）"><a href="#Spring-Cloud-Config（配置中心）" class="headerlink" title="Spring Cloud Config（配置中心）"></a>Spring Cloud Config（配置中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110154256.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>翻译不过来了，<br>再简单简单说就是：之前的配置文件是存放在项目内部的，耦合度太高，我们把配置文件抽取出来，放在git<br>仓库上，对git仓库统一进行配置。</p>
+<h1 id="Spring-Cloud-Bus（消息总线）"><a href="#Spring-Cloud-Bus（消息总线）" class="headerlink" title="Spring Cloud Bus（消息总线）"></a>Spring Cloud Bus（消息总线）</h1><p><img src="https://img-blog.csdnimg.cn/20191211110711264.jpg" alt=" "><br>Spring Cloud Bus将轻量级消息代理程序链接到分布式系统的节点。 然后可以将其用于广播状态更改（例如配置更改）或其他管理指令。<br>简单点说：<strong>我们可以利用SpringCloudBus做到在不重启项目的情况下，实现配置文件的修改。</strong></p>
+<h1 id="Spring-Cloud-Security-（安全中心）"><a href="#Spring-Cloud-Security-（安全中心）" class="headerlink" title="Spring Cloud Security （安全中心）"></a>Spring Cloud Security （安全中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211111336964.jpg" alt=" "><br>Spring Cloud Security为构建安全的应用程序和服务提供了一组基本的方法。可以在外部(或集中)进行大量配置的声明式模型有助于实现大型系统的协作、远程组件，通常使用中央indentity管理服务。它在云计算这样的服务平台上也非常容易使用。</p>
+<h1 id="Spring-Cloud-Consul（多服务中心）"><a href="#Spring-Cloud-Consul（多服务中心）" class="headerlink" title="Spring Cloud Consul（多服务中心）"></a>Spring Cloud Consul（多服务中心）</h1><p><img src="https://img-blog.csdnimg.cn/20191211113226991.jpg" alt="  "><br>Spring Cloud Consul通过自动配置并绑定到Spring Environment和其他Spring编程模型习惯用法，为Spring Boot应用程序提供Consul集成。 通过一些简单的注释，您可以快速启用和配置应用程序内的通用模式，并使用Hashicorp的Consul构建大型分布式系统</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>当然SpringCloud还有很多很多的组件，这里这是列举了最常见的组件</p>
+<p>有兴趣可到官网查看<a href="https://spring.io/" target="_blank" rel="noopener">Spring官网</a></p>
+<p>SpringCloud的体系相当庞大，先了解概念，</p>
+<p>有空再更！！！</p>
+<p>如果文章有错的地方欢迎指正</p>
+<p><img src="https://img-blog.csdnimg.cn/20200109205959220.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
 
             </div>
             <hr />
@@ -578,9 +519,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Spring入门--AOP》
+                    《SpringCloud--入门篇》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/05/spring-ru-men-aop/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/11/springcloud-yi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -621,7 +562,7 @@
         repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2020/01/05/spring-ru-men-aop/',
+        id: '2019/12/11/springcloud-yi/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -908,26 +849,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/06/spring-ru-men-kong-zhi-fan-zhuan/">
+                <a href="/2019/12/31/huan-cun-gai-nian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Spring入门--控制反转">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Redis缓存概念">
                         
-                        <span class="card-title">Spring入门--控制反转</span>
+                        <span class="card-title">Redis缓存概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近学了Spring 但一直没整理，趁着空档整理一下吧！
-在正式开始Spring的学习前，我们先来认识几个概念
-什么是SpringSpring是一个家族体系（spring的全家桶），可以完成Java开发中几乎所有问题！！为什么说Spring
+                            缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
+解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-31
                         </span>
                         <span class="publish-author">
                             
@@ -944,8 +884,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/缓存/" target="_blank">
+                        <span class="chip bg-color">缓存</span>
                     </a>
                     
                 </div>
@@ -959,27 +899,23 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/03/springcloud-yi/">
+                <a href="/2019/12/11/spring-ru-men-hystrix-rong-duan-qi-he-ribbon-fu-zai-jun-heng/">
                     <div class="card-image">
                         
+                        <img src="https://img-blog.csdnimg.cn/20200109212157516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="SpringCloud--Hystrix与Ribbon">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SpringCloud--入门篇">
-                        
-                        <span class="card-title">SpringCloud--入门篇</span>
+                        <span class="card-title">SpringCloud--Hystrix与Ribbon</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在看SpringCloud之前我们先来了解一下什么是微服务
-微服务维基百科上这样说
-
-微服务 (Microservices)是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务
+                            Hystrix（熔断器）什么是Hystrix（熔断器）Hystrix是Netflix开源的一款容错框架，包含常用的容错方法：线程隔离、信号量隔离、降级策略、熔断技术。    熔断器，就是保险丝，就是当电流超过一定阈值时触发的保护装置。Git
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-11
                             </span>
                         <span class="publish-author">
                             
@@ -1156,7 +1092,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.9k</span>
+            <span class="white-color">9.1k</span>
             
 
             <br>

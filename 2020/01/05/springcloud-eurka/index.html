@@ -4,12 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="缓存常见概念, juhaozero的博客">
+    <meta name="keywords" content="SpringCloud--Eurka注册中心, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
-解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后">
+    <meta name="description" content="在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍接下来具体了解一下组件
+Eureka注册中心微服务的注册中心    服务提供者将服务注册到Eureka注册中心上并定期发送心跳，服务消费者定期从注册中心中拉取服务    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>缓存常见概念 | juhaozero的博客</title>
+    <title>SpringCloud--Eurka注册中心 | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +275,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        缓存常见概念
+                        SpringCloud--Eurka注册中心
                     </div>
                 </div>
             </div>
@@ -392,8 +392,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/其他/" target="_blank">
-                            <span class="chip bg-color">其他</span>
+                        <a href="/tags/Spring/" target="_blank">
+                            <span class="chip bg-color">Spring</span>
+                        </a>
+                        
+                        <a href="/tags/SpringCloud/" target="_blank">
+                            <span class="chip bg-color">SpringCloud</span>
                         </a>
                         
                     </div>
@@ -416,7 +420,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-31
+                    2020-01-05
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -430,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    405
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -453,14 +457,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉</p>
-<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p>之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，<strong>我们可以为这些key在缓存中设置对应的值为null</strong>，后面查询这个key的时候就不用查询数据库了，(访问key未在DB查询到值，也将空值写进缓存，设置较短过期时间)</p>
-<h2 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>在高并发的情况下，大量的请求同时查询同一个key时，此时这个key正好失效了，就会导致同一时间，这些请求都会去查询数据库，这样的现象我们称为缓存击穿。</p>
-<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用分布式锁，每次拿到锁的时候都要去查询一下缓存有没有、查不到缓存的情况下，只有拿到锁的第一个线程去请求数据库，然后插入缓存。</p>
-<h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>缓存服务或春失效、大量数据访问DB、、当某一时刻发生大规模的缓存失效的情况，缓存在同一时刻全部失效，造成瞬时DB请求量大、压力骤增，引起雪崩。</p>
-<h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><p>采用集群，降低服务宕机的概率<br>可以给缓存设置过期时间时加上一个随机值时间，使得每个key的过期时间分布开来，不会集中在同一时刻失效。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191231112651695.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "></p>
-<h4 id="2020年见"><a href="#2020年见" class="headerlink" title="2020年见"></a>2020年见</h4>
+                <p>在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍<br>接下来具体了解一下组件</p>
+<h2 id="Eureka注册中心"><a href="#Eureka注册中心" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>微服务的注册中心</strong><br>    服务提供者将服务注册到Eureka注册中心上并定期发送心跳，服务消费者定期从注册中心中拉取服务<br>    做到一个过渡的作用，解决了服务和消费耦合的问题，服务提供者只需注册到注册中心，消费者只需拉取<br>    服务，两者通过注册中心相连，减少了代码的耦合。<strong>举个例子就是卖房APP，服务提供者只需提供卖房的信息服务，消费者只需要定期去App上查看就可以了</strong>。</p>
+<p>心跳：心跳指的是监听服务是否正常进行，当服务提供者往Eureka上注册时，会定期向eureka上发送心跳<br>            Eureka会监听这个心跳，当服务发生错误时，心跳停止发送，Eureka会定期剔除没有发送心跳的服务。<br>        <img src="https://img-blog.csdnimg.cn/20191217165545107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="具体说明"></p>
+<h2 id="Eureka入门"><a href="#Eureka入门" class="headerlink" title="Eureka入门"></a>Eureka入门</h2><p>在Spring的官方文档中有快速开始的说明<br><strong>任何具有@EnableEurekaClient的Spring Boot应用程序都将尝试与http:// localhost:8761上的Eureka服务器联系（eureka.client.serviceUrl.defaultZone的默认值)</strong><br><img src="https://img-blog.csdnimg.cn/20191217171143663.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也就是说，我们要搭建一个Eureka服务要在启动类上添加@EnableEurekaClient注解即可（eureka的默认端口是8761）</p>
+<h2 id="Eureka注册中心-1"><a href="#Eureka注册中心-1" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>添加依赖</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Eureka服务端 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>netflix<span class="token operator">-</span>eureka<span class="token operator">-</span>server<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2019121717190388.jpg" alt="eureka启动类"><br><strong>提供配置文件</strong><br><img src="https://img-blog.csdnimg.cn/2019121717282477.jpg" alt="在这里插入图片描述"><br>启动项目看到以下页面则说明成功<br><img src="https://img-blog.csdnimg.cn/20191217172911519.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>但还是存在一些小问题<br>回到后台，发现控制台一直在打印错误<br><img src="https://img-blog.csdnimg.cn/20191217173213701.jpg" alt="在这里插入图片描述"><br>在默认设置下，eureka服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为:</p>
+<p>在配置文件中配置<br><img src="https://img-blog.csdnimg.cn/20191217173649747.jpg" alt="在这里插入图片描述"></p>
+<h2 id="服务提供者注册服务"><a href="#服务提供者注册服务" class="headerlink" title="服务提供者注册服务"></a>服务提供者注册服务</h2><p><strong>添加依赖</strong></p>
+<pre class="line-numbers language-java"><code class="language-java">        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 配置eureka客户端 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>netflix<span class="token operator">-</span>eureka<span class="token operator">-</span>client<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>添加启动类</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20191217174211110.jpg" alt="在这里插入图片描述"></p>
+<p>添加配置文件<br><img src="https://img-blog.csdnimg.cn/20191217175327715.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>服务失效时间和续约间隔时间<br><strong>续约间隔时间：服务端定期向注册中心发送心跳的时间（默认为30秒）<br>服务失效时间：当注册中心获取不到心跳超过失效时间，将该服务从服务列表中剔除(默认为90秒)</strong></p>
+<p>启动项目<br>当在网页上看到则说明成功<br><img src="https://img-blog.csdnimg.cn/2019121717562916.jpg" alt="在这里插入图片描述"><br>application为服务名称</p>
+<h2 id="服务消费者者拉取服务"><a href="#服务消费者者拉取服务" class="headerlink" title="服务消费者者拉取服务"></a>服务消费者者拉取服务</h2><p><strong>服务消费者拉取服务也同提供者相同</strong><br>只是配置文件有点不同<br><img src="https://img-blog.csdnimg.cn/20191217180104591.jpg" alt="在这里插入图片描述"><br><strong>服务拉取时间：服务消费者每隔时间向注册中心拉取服务列表（默认为30秒）<br>服务替换时间：服务消费者每隔时间替换服务列表（默认为30秒）</strong></p>
+<h3 id="关于Eureka的定期剔除服务列表"><a href="#关于Eureka的定期剔除服务列表" class="headerlink" title="关于Eureka的定期剔除服务列表**"></a>关于Eureka的定期剔除服务列表**</h3><p>我们可以配置文件中声明<br><img src="https://img-blog.csdnimg.cn/20191217181036603.jpg" alt="在这里插入图片描述"><br><strong>服务失效剔除时间间隔： 注册中心每隔一段时间剔除没有发送心跳的服务（默认为60秒）</strong></p>
+<p><strong>自我保护模式：默认情况下，如果在15分钟内超过85%的客户端节点（服务提供者）都没有正常的心跳，那么Eureka就认为客户端与注册中心出现了网络故障(比如网络故障或频繁的启动关闭客户端)，Eureka Server自动进入自我保护模式。不再剔除任何服务，当网络故障恢复后，该节点自动退出自我保护模式。（默认开启）</strong></p>
+<h1 id="Eureka的集群"><a href="#Eureka的集群" class="headerlink" title="Eureka的集群"></a>Eureka的集群</h1><p> <strong>注册中心是一个非常重要的中介，如果注册中心挂了，那么整个服务将会宕机</strong></p>
+<h3 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h3><p><strong>我们需要在配置文件中配置另一台注册中心的地址，以逗号分割<br>两者相互注册 拉取服务和注册服务也需要将其改成true，才可以相互注册和拉取</strong><br><img src="https://img-blog.csdnimg.cn/2019121718220419.jpg" alt="在这里插入图片描述"></p>
+<h3 id="客户端（消费者和提供者）"><a href="#客户端（消费者和提供者）" class="headerlink" title="客户端（消费者和提供者）"></a>客户端（消费者和提供者）</h3><p>·同样客户端也需要配置另一台注册中心</p>
+<p><img src="https://img-blog.csdnimg.cn/20191217182608780.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>那到此关于Eureka的入门和一些常用配置就到这里了</p>
+<p> 关于Eureka我也只是学到这里<br> 如果有错欢迎指正<br> 下次有空再更！！！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p> 推荐阅读<br><a href="http://www.ityouknow.com/springcloud/2017/05/10/springcloud-eureka.html" target="_blank" rel="noopener">springcloud(二)：注册中心Eureka</a></p>
+
             </div>
             <hr />
 
@@ -494,9 +525,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《缓存常见概念》
+                    《SpringCloud--Eurka注册中心》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/05/springcloud-eurka/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -537,7 +568,7 @@
         repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/',
+        id: '2020/01/05/springcloud-eurka/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -824,28 +855,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/02/spring-ru-men-springboot/">
+                <a href="/2020/01/05/spring-ru-men-aop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Spring入门--SpringBoot">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Spring入门--AOP">
                         
-                        <span class="card-title">Spring入门--SpringBoot</span>
+                        <span class="card-title">Spring入门--AOP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SpringBoot什么是SpringBootSpring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化新 Spring 应用的初始搭建以及开发过程。
-SpringBoot的特点
-List item
-
-在以前我们
+                            SpringAOP了解SpringAOP之前，我们先要了解一些关于代理的概念
+什么是代理代理(Proxy)是一种设计模式,提供了对目标对象另外的访问方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的基础上,增强额外的功能
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
                         </span>
                         <span class="publish-author">
                             
@@ -874,28 +902,30 @@ List item
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/">
+                <a href="/2020/01/03/springcloud-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="缓存常见概念">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SpringCloud--入门篇">
                         
-                        <span class="card-title">缓存常见概念</span>
+                        <span class="card-title">SpringCloud--入门篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            缓存穿透概念：访问一个不存在的key，缓存不起作用，请求会穿透到DB（数据库），流量大时DB会挂掉
-解决方法：之所以发生穿透，是因为缓存中没有存储这些数据的key，从而每次都查询数据库，我们可以为这些key在缓存中设置对应的值为null，后
+                            在看SpringCloud之前我们先来了解一下什么是微服务
+微服务维基百科上这样说
+
+微服务 (Microservices)是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
                             </span>
                         <span class="publish-author">
                             
@@ -909,12 +939,15 @@ List item
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/其他/" target="_blank">
-                        <span class="chip bg-color">其他</span>
+                    <a href="/tags/Spring/" target="_blank">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                    <a href="/tags/SpringCloud/" target="_blank">
+                        <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
                 </div>

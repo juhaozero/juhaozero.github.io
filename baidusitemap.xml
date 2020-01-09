@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/2020/01/05/spring-ru-men-aop/</loc>
-    <lastmod>2020-01-07</lastmod>
+    <lastmod>2020-01-09</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</loc>
+    <lastmod>2020-01-09</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/01/05/springcloud-eurka/</loc>
+    <lastmod>2020-01-09</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/01/03/springcloud-yi/</loc>
     <lastmod>2020-01-07</lastmod>
@@ -14,9 +20,6 @@
     <lastmod>2020-01-07</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/01/06/spring-ru-men-springmvc/</loc>
-    <lastmod>2020-01-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/12/31/huan-cun-xue-beng-ji-chuan-he-chuan-tou/</loc>
     <lastmod>2020-01-07</lastmod>
   </url>
 </urlset>

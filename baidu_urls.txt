@@ -1,5 +1,6 @@
 http://yoursite.com/2020/01/01/guan-yu-2020-nian/
 http://yoursite.com/2019/12/31/huan-cun-gai-nian/
+http://yoursite.com/2019/12/17/springcloud-eureka/
 http://yoursite.com/2019/12/11/springcloud-yi/
 http://yoursite.com/2019/12/11/spring-ru-men-hystrix-rong-duan-qi-he-ribbon-fu-zai-jun-heng/
 http://yoursite.com/2019/12/10/spring-ru-men-springboot/

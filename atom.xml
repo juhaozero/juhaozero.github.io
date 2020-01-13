@@ -69,6 +69,35 @@
   </entry>
   
   <entry>
+    <title>SpringCloud-注册中心</title>
+    <link href="http://yoursite.com/2019/12/17/springcloud-eureka/"/>
+    <id>http://yoursite.com/2019/12/17/springcloud-eureka/</id>
+    <published>2019-12-16T16:00:00.000Z</published>
+    <updated>2020-01-13T04:07:47.919Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍&lt;br&gt;接下来具体了解一下组件&lt;/p&gt;
+&lt;h2 id=&quot;Eureka注册中心&quot;&gt;&lt;a href=&quot;#Eureka注册中心&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
+    
+      <category term="SpringCloud" scheme="http://yoursite.com/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringCloud--入门篇</title>
     <link href="http://yoursite.com/2019/12/11/springcloud-yi/"/>
     <id>http://yoursite.com/2019/12/11/springcloud-yi/</id>

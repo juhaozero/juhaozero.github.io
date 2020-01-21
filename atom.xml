@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-09T13:29:53.768Z</updated>
+  <updated>2020-01-21T12:57:30.915Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RabbitMQ笔记</title>
+    <link href="http://yoursite.com/2020/01/21/rabbitmq/"/>
+    <id>http://yoursite.com/2020/01/21/rabbitmq/</id>
+    <published>2020-01-20T16:00:00.000Z</published>
+    <updated>2020-01-21T12:57:30.915Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是消息队列&quot;&gt;&lt;a href=&quot;#什么是消息队列&quot; class=&quot;headerlink&quot; title=&quot;什么是消息队列&quot;&gt;&lt;/a&gt;什么是消息队列&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;消息队列（英语：Message
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="RabbitMQ" scheme="http://yoursite.com/tags/RabbitMQ/"/>
+    
+  </entry>
   
   <entry>
     <title>关于2020年</title>

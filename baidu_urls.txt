@@ -1,3 +1,4 @@
+http://yoursite.com/2020/01/21/rabbitmq/
 http://yoursite.com/2020/01/01/guan-yu-2020-nian/
 http://yoursite.com/2019/12/31/huan-cun-gai-nian/
 http://yoursite.com/2019/12/17/springcloud-eureka/

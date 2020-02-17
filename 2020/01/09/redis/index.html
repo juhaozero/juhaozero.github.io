@@ -4,12 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringCloud-注册中心, juhaozero的博客">
+    <meta name="keywords" content="Redis笔记, juhaozero的博客">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍接下来具体了解一下组件
-Eureka注册中心微服务的注册中心    服务提供者将服务注册到Eureka注册中心上并定期发送心跳，服务消费者定期从注册中心中拉取服务    ">
+    <meta name="description" content="传统DB的缺点像Mysql、和Oracle 这种关系型数据库，虽然有着数据稳定和服务稳定、数据一致性的特点，但也存在一个致命的缺陷:
+高并发下DB不稳定在高并发的情况下，DB的不稳定性，在大量用户访问时DB出奇的慢，因为对磁盘操作需要使用I">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringCloud-注册中心 | juhaozero的博客</title>
+    <title>Redis笔记 | juhaozero的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +275,13 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/20200109211313441.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/2020010920475983.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringCloud-注册中心
+                        Redis笔记
                     </div>
                 </div>
             </div>
@@ -392,12 +392,8 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Spring/" target="_blank">
-                            <span class="chip bg-color">Spring</span>
-                        </a>
-                        
-                        <a href="/tags/SpringCloud/" target="_blank">
-                            <span class="chip bg-color">SpringCloud</span>
+                        <a href="/tags/Redis/" target="_blank">
+                            <span class="chip bg-color">Redis</span>
                         </a>
                         
                     </div>
@@ -420,7 +416,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-17
+                    2020-01-09
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -434,14 +430,14 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    10 分
                 </div>
                 
                 
@@ -457,41 +453,261 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在之前的文章中，我们认识了有关微服务和SpringCloud的一些介绍<br>接下来具体了解一下组件</p>
-<h2 id="Eureka注册中心"><a href="#Eureka注册中心" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>微服务的注册中心</strong><br>    服务提供者将服务注册到Eureka注册中心上并定期发送心跳，服务消费者定期从注册中心中拉取服务<br>    做到一个过渡的作用，解决了服务和消费耦合的问题，服务提供者只需注册到注册中心，消费者只需拉取<br>    服务，两者通过注册中心相连，减少了代码的耦合。<strong>举个例子就是卖房APP，服务提供者只需提供卖房的信息服务，消费者只需要定期去App上查看就可以了</strong>。</p>
-<p>心跳：心跳指的是监听服务是否正常进行，当服务提供者往Eureka上注册时，会定期向eureka上发送心跳<br>            Eureka会监听这个心跳，当服务发生错误时，心跳停止发送，Eureka会定期剔除没有发送心跳的服务。<br>        <img src="https://img-blog.csdnimg.cn/20191217165545107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="具体说明"></p>
-<h2 id="Eureka入门"><a href="#Eureka入门" class="headerlink" title="Eureka入门"></a>Eureka入门</h2><p>在Spring的官方文档中有快速开始的说明<br><strong>任何具有@EnableEurekaClient的Spring Boot应用程序都将尝试与http:// localhost:8761上的Eureka服务器联系（eureka.client.serviceUrl.defaultZone的默认值)</strong><br><img src="https://img-blog.csdnimg.cn/20191217171143663.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "><br>也就是说，我们要搭建一个Eureka服务要在启动类上添加@EnableEurekaClient注解即可（eureka的默认端口是8761）</p>
-<h2 id="Eureka注册中心-1"><a href="#Eureka注册中心-1" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h2><p><strong>添加依赖</strong></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Eureka服务端 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>netflix<span class="token operator">-</span>eureka<span class="token operator">-</span>server<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/2019121717190388.jpg" alt="eureka启动类"><br><strong>提供配置文件</strong><br><img src="https://img-blog.csdnimg.cn/2019121717282477.jpg" alt="  "><br>启动项目看到以下页面则说明成功<br><img src="https://img-blog.csdnimg.cn/20191217172911519.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
-<p>但还是存在一些小问题<br>回到后台，发现控制台一直在打印错误<br><img src="https://img-blog.csdnimg.cn/20191217173213701.jpg" alt=" "><br>在默认设置下，eureka服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为:</p>
-<p>在配置文件中配置<br><img src="https://img-blog.csdnimg.cn/20191217173649747.jpg" alt="  "></p>
-<h2 id="服务提供者注册服务"><a href="#服务提供者注册服务" class="headerlink" title="服务提供者注册服务"></a>服务提供者注册服务</h2><p><strong>添加依赖</strong></p>
-<pre class="line-numbers language-java"><code class="language-java">        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 配置eureka客户端 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>cloud<span class="token operator">-</span>starter<span class="token operator">-</span>netflix<span class="token operator">-</span>eureka<span class="token operator">-</span>client<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>添加启动类</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20191217174211110.jpg" alt="  "></p>
-<p>添加配置文件<br><img src="https://img-blog.csdnimg.cn/20191217175327715.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>服务失效时间和续约间隔时间<br><strong>续约间隔时间：服务端定期向注册中心发送心跳的时间（默认为30秒）<br>服务失效时间：当注册中心获取不到心跳超过失效时间，将该服务从服务列表中剔除(默认为90秒)</strong></p>
-<p>启动项目<br>当在网页上看到则说明成功<br><img src="https://img-blog.csdnimg.cn/2019121717562916.jpg" alt=" "><br>application为服务名称</p>
-<h2 id="服务消费者者拉取服务"><a href="#服务消费者者拉取服务" class="headerlink" title="服务消费者者拉取服务"></a>服务消费者者拉取服务</h2><p><strong>服务消费者拉取服务也同提供者相同</strong><br>只是配置文件有点不同<br><img src="https://img-blog.csdnimg.cn/20191217180104591.jpg" alt="  "><br><strong>服务拉取时间：服务消费者每隔时间向注册中心拉取服务列表（默认为30秒）<br>服务替换时间：服务消费者每隔时间替换服务列表（默认为30秒）</strong></p>
-<h3 id="关于Eureka的定期剔除服务列表"><a href="#关于Eureka的定期剔除服务列表" class="headerlink" title="关于Eureka的定期剔除服务列表**"></a>关于Eureka的定期剔除服务列表**</h3><p>我们可以配置文件中声明<br><img src="https://img-blog.csdnimg.cn/20191217181036603.jpg" alt=" "><br><strong>服务失效剔除时间间隔： 注册中心每隔一段时间剔除没有发送心跳的服务（默认为60秒）</strong></p>
-<p><strong>自我保护模式：默认情况下，如果在15分钟内超过85%的客户端节点（服务提供者）都没有正常的心跳，那么Eureka就认为客户端与注册中心出现了网络故障(比如网络故障或频繁的启动关闭客户端)，Eureka Server自动进入自我保护模式。不再剔除任何服务，当网络故障恢复后，该节点自动退出自我保护模式。（默认开启）</strong></p>
-<h1 id="Eureka的集群"><a href="#Eureka的集群" class="headerlink" title="Eureka的集群"></a>Eureka的集群</h1><p> <strong>注册中心是一个非常重要的中介，如果注册中心挂了，那么整个服务将会宕机</strong></p>
-<h3 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h3><p><strong>我们需要在配置文件中配置另一台注册中心的地址，以逗号分割<br>两者相互注册 拉取服务和注册服务也需要将其改成true，才可以相互注册和拉取</strong><br><img src="https://img-blog.csdnimg.cn/2019121718220419.jpg" alt=" "></p>
-<h3 id="客户端（消费者和提供者）"><a href="#客户端（消费者和提供者）" class="headerlink" title="客户端（消费者和提供者）"></a>客户端（消费者和提供者）</h3><p>·同样客户端也需要配置另一台注册中心</p>
-<p><img src="https://img-blog.csdnimg.cn/20191217182608780.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>那到此关于Eureka的入门和一些常用配置就到这里了</p>
-<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a href="http://www.ityouknow.com/springcloud/2017/05/10/springcloud-eureka.html" target="_blank" rel="noopener">springcloud(二)：注册中心Eureka</a></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p> 关于Eureka我也只是学到这里<br> 如果有错欢迎指正<br> 下次有空再更！！！<br> <img src="https://img-blog.csdnimg.cn/20200109211313441.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+                <h2 id="传统DB的缺点"><a href="#传统DB的缺点" class="headerlink" title="传统DB的缺点"></a>传统DB的缺点</h2><p>像Mysql、和Oracle 这种关系型数据库，虽然有着数据稳定和服务稳定、数据一致性的特点，但也存在一个致命的缺陷:</p>
+<h4 id="高并发下DB不稳定"><a href="#高并发下DB不稳定" class="headerlink" title="高并发下DB不稳定"></a>高并发下DB不稳定</h4><p>在高并发的情况下，DB的不稳定性，在大量用户访问时DB出奇的慢，因为对磁盘操作需要使用IO流，一个字节一个字节存取操作。要将所有数据读取到内存中后才可以操作。所以在高并发下DB的<strong>高可用</strong>便成了问题。这时NoSQL便应运而生。</p>
+<h3 id="什么是NOSQl"><a href="#什么是NOSQl" class="headerlink" title="什么是NOSQl"></a>什么是NOSQl</h3><blockquote>
+<p>NoSQL是对不同于传统的关系数据库的数据库管理系统的统称。即非关系型数据库<br>NOSQL：因为是内存操作数据，非常快,解决了三高问题（高并发、高海量、高可用）</p>
+</blockquote>
+<p><strong>非关系型数据库与非关系型数据库的区别</strong><br>|关系型数据库|  非关系型数据库<br>|–|–|<br>|以文件方式保存  | 存储在内存中，服务器关闭数据可能会丢失 |<br>|数据可以永久保存| 不能持久化保存，可能导致数据丢失|<br>|查询速度慢| 存取速度快|</p>
+<p>常见的NOSQL数据库<br><img src="https://img-blog.csdnimg.cn/20200107160826641.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p><img src="https://img-blog.csdnimg.cn/20200107164533556.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>简单翻译下</p>
+<blockquote>
+<p>Redis是一个开源(BSD许可)的内存数据结构存储，用作数据库、缓存和消息代理。它支持诸如字符串、散列、列表、集、带范围查询的排序集、位图、hyperloglogs、带半径查询和流的地理空间索引等数据结构。Redis具有内置的复制、Lua脚本、LRU清除、事务和不同级别的磁盘持久性，并通过Redis Sentinel和带有Redis集群的自动分区提供高可用性</p>
+</blockquote>
+<p>redis的安装可以到官网下载，这里就不演示了。</p>
+<h4 id="Redis是一种高级的key-value存储系统，其中value支持五种数据类型"><a href="#Redis是一种高级的key-value存储系统，其中value支持五种数据类型" class="headerlink" title="Redis是一种高级的key:value存储系统，其中value支持五种数据类型"></a>Redis是一种高级的<strong>key:value</strong>存储系统，其中value支持五种数据类型</h4><ul>
+<li><p><strong>字符串（strings）</strong></p>
+</li>
+<li><p>字符串无序集合（Set）</p>
+</li>
+<li><p>有序字符串集合（zset）</p>
+</li>
+<li><p>字符串列表（List）</p>
+</li>
+<li><p>-哈希类型（hash）</p>
+</li>
+</ul>
+<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><p>字符串类型是 Redis 中最为基础的数据存储类型，<strong>它在 Redis 中以二进制保存，没有编码和解码的过程</strong>，String字符串类型的Value数据长度512M</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set key 值</td>
+<td>添加字符串类型键和值</td>
+</tr>
+<tr>
+<td>get  key 值</td>
+<td>取出指定类型的值，没有返回null</td>
+</tr>
+<tr>
+<td>del key</td>
+<td>删除指定的key 返回删除的个数 没有返回0</td>
+</tr>
+<tr>
+<td><img src="https://img-blog.csdnimg.cn/20200107165300155.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></td>
+<td></td>
+</tr>
+<tr>
+<td>### Set类型</td>
+<td></td>
+</tr>
+<tr>
+<td>我们可以将 Set 类型看作为没有排序的字符集合</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sadd  key  值1、值2</td>
+<td>向集合中添加一个或多个元素</td>
+</tr>
+<tr>
+<td>smembers key</td>
+<td>查询指定集合所有的元素</td>
+</tr>
+<tr>
+<td>sismember key 值</td>
+<td>查询某个值是否存在 存在返回1、反则</td>
+</tr>
+<tr>
+<td>srem key 值1、值2</td>
+<td>删除指定元素</td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/20200107170803104.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+<h3 id="Zset类型"><a href="#Zset类型" class="headerlink" title="Zset类型"></a>Zset类型</h3><p>集合一样也是string类型元素的集合,且不允许重复的成员。<br><strong>不同的是每个元素都会关联一个分数。redis正是通过分数来为集合中的成员进行从小到大的排序</strong>。有序集合的成员是唯一的,但分数(score)却可以重复，每个集合可存储40多亿个成员</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>zadd key   分数  值</td>
+<td>向集合 添加一个或多个元素</td>
+</tr>
+<tr>
+<td>zrang key 开始 结束</td>
+<td>返回集合中指定区间内的元素</td>
+</tr>
+<tr>
+<td>zrem key 值</td>
+<td>删除集合的 一个元素或多个元素</td>
+</tr>
+<tr>
+<td>zcard key</td>
+<td>获取集合中的元素数</td>
+</tr>
+<tr>
+<td>zrank key 值</td>
+<td>返回集合中指定成员的索引</td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/20200107174332626.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+<h2 id="list类型"><a href="#list类型" class="headerlink" title="list类型"></a>list类型</h2><p> List 类型是按照插入顺序排序的字符串链表。和数据结构中的普通链表一样，我们可以在其左部(left)和右部(right)添加新的元素。<br>| 操作                  | 作用                                                    |<br>| ——————— | ——————————————————- |<br>| lpush key 元素1 元素2 | 往链表左边添加元素 键不存在则 创建新链表                |<br>| rpush key 元素1 元素2 | 往链表右边添加元素 键不存在则 创建新链表                |<br>| lrange key 开始 结束  | 取出指定范围的元素列表 左边数第一个为0 右边数第一个为-1 |<br>| lpop key              | 从左边删除一个元素                                      |<br>| rpop key              | 从右边删除一个元素                                      |<br>| llen key              | 得到指定链表的长度                                      |<br><img src="https://img-blog.csdnimg.cn/20200109160119551.jpg" alt="  "><br><img src="https://img-blog.csdnimg.cn/20200109160135742.jpg" alt="  "></p>
+<h2 id="Hash类型"><a href="#Hash类型" class="headerlink" title="Hash类型"></a>Hash类型</h2><p>Redis 中的 Hash 类型可以看成具 String 的键和 String 的值 Map 容器，每一个 Hash 可以存储 40（42 亿 9千多个）亿个键值对。</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hset key  MapKey 值</td>
+<td>向指定的key中添加 hasnMap类型</td>
+</tr>
+<tr>
+<td>hget key  MapKey</td>
+<td>获取指定key中的指定HashMap</td>
+</tr>
+<tr>
+<td>hmset key MapKey1 值  MapKey2 值</td>
+<td>向一个键中设置多个Map和值</td>
+</tr>
+<tr>
+<td>hmget key MapKey1 MapKey2</td>
+<td>获取一个键中的多个Map</td>
+</tr>
+<tr>
+<td>hdel key MapKey1 MapKey1</td>
+<td>删除一个键中的多个Map</td>
+</tr>
+<tr>
+<td>hgetall  key</td>
+<td>得到一个键中的所有Map</td>
+</tr>
+<tr>
+<td><img src="https://img-blog.csdnimg.cn/20200109163249198.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></td>
+<td></td>
+</tr>
+<tr>
+<td>批量插入Map</td>
+<td></td>
+</tr>
+<tr>
+<td><img src="https://img-blog.csdnimg.cn/20200109163307979.jpg" alt="  "></td>
+<td></td>
+</tr>
+<tr>
+<td>删除Map</td>
+<td></td>
+</tr>
+<tr>
+<td><img src="https://img-blog.csdnimg.cn/2020010916333456.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="其他操作命令"><a href="#其他操作命令" class="headerlink" title="其他操作命令"></a>其他操作命令</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>keys  匹配字符</td>
+<td>查询数据库的键 （ *   为匹配全部字符）</td>
+</tr>
+<tr>
+<td>del key1  key2</td>
+<td>删除任意键</td>
+</tr>
+<tr>
+<td>exists key</td>
+<td>判断指定键是否存在</td>
+</tr>
+<tr>
+<td>type key</td>
+<td>判断该key 属于哪种类型</td>
+</tr>
+<tr>
+<td>select 数据库编号</td>
+<td>选择指定的数据库</td>
+</tr>
+<tr>
+<td>move key 数据库编号</td>
+<td>将某个键移动到另一个数据库</td>
+</tr>
+<tr>
+<td>Expire key  秒</td>
+<td>设置过期时间</td>
+</tr>
+<tr>
+<td>TTL key</td>
+<td>返回剩余生存时间</td>
+</tr>
+<tr>
+<td><img src="https://img-blog.csdnimg.cn/2020010917015779.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="   "></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Redis数据库，Redis默认有16个数据库，我们可以通过Redis的一个图形化工具查看<br><img src="https://img-blog.csdnimg.cn/20200109170353435.jpg" alt=" "><br><img src="https://img-blog.csdnimg.cn/20200109171834997.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "><img src="https://img-blog.csdnimg.cn/2020010917220188.jpg" alt="  "><br><img src="https://img-blog.csdnimg.cn/20200109172228496.jpg" alt="  "></p>
+<h4 id="设置过期时间（过期时为-2）"><a href="#设置过期时间（过期时为-2）" class="headerlink" title="设置过期时间（过期时为-2）"></a>设置过期时间（过期时为-2）</h4><p><img src="https://img-blog.csdnimg.cn/20200109174955819.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="   "></p>
+<h2 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h2><p>Redis的最大特色就是<strong>持久化机制</strong>，当发生服务器宕机等不可预料因素时，Redis会将符合条件的数据进行持久化，在重启时恢复数据。RDB 和 AOF 是 Redis 内部的两种数据持久化策略，这是两种不同的持久化策略，<strong>一种是基于内存快照，一种是基于操作日志</strong></p>
+<h3 id="RDB持久化策略（基于内存快照）"><a href="#RDB持久化策略（基于内存快照）" class="headerlink" title="RDB持久化策略（基于内存快照）"></a>RDB持久化策略（基于内存快照）</h3><blockquote>
+<p>RDB(Redis DataBase)持久化策略就是在符合一定条件下将内存所有数据持久化到磁盘中dump.rdb文件中。RDB策略是redis默认持久化策略。也叫快照策略。</p>
+</blockquote>
+<p>什么是快照策略，RDB持久化是指在某一段时间内将该内存下所有的数据存储为文件，当服务器丢失时，自动恢复到最新的一份RDB文件，简单点说就是相当于每隔一段时间就将Redis的文件<br>做一次备份，<strong>当然要满足一定的要求</strong> RDB持久化是Redis默认的持久化机制</p>
+<p>在安装完Redis的目录下有个config文件<br><img src="https://img-blog.csdnimg.cn/20200109192335792.jpg" alt="  "><br>在该文件下我们可以找到这样一段话<br><img src="https://img-blog.csdnimg.cn/20200109192413876.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "><br>简单翻译一下就是</p>
+<blockquote>
+<p>将DB保存到磁盘上:<br>在下面的例子中行为将保存DB<br>900秒后(15分钟)如果至少1键改变了<br>300秒(5分钟)如果至少10键改变<br>60秒后如果至少10000键改变</p>
+<p>也就是说：<br><strong>当数据在15分钟内改变了一个key，就会执行持久化机制<br>如果数据在5分钟内有10个key改变，就会执行持久化机制<br>如果数据在1分钟内有10000key改变，就会执行持久化机制</strong></p>
+</blockquote>
+<p>而我们持久化完的数据在哪里显示呢？<br>在该文件下面也有进行说明<br><img src="https://img-blog.csdnimg.cn/20200109193309603.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "><br>简单翻译下</p>
+<blockquote>
+<p>要将数据库转储到何处的文件名</p>
+<p>于是我们就可以在Redis的安装目录下找到这个文件<br><img src="https://img-blog.csdnimg.cn/20200109193539993.jpg" alt="  "></p>
+</blockquote>
+<h3 id="关于RDB持久化机制"><a href="#关于RDB持久化机制" class="headerlink" title="关于RDB持久化机制"></a>关于RDB持久化机制</h3><p>RDB的持久化机制，我们可以在配置文件中修改持久化时间，但一般不建议修改，因为在Redis达到一定数据量时，频繁的进行RDB的持久化机制便是一个非常浪费性能的事。RDB的持久机制<br>不高，便意味可能RDB持久化会导致丢失一定的数据。以快的持久化时间来说，相当于我们还是有60秒的空档期。而这可以靠另一个持久化机制来解决。</p>
+<h3 id="AOF持久化策略（基于操作日志）"><a href="#AOF持久化策略（基于操作日志）" class="headerlink" title="AOF持久化策略（基于操作日志）"></a>AOF持久化策略（基于操作日志）</h3><blockquote>
+<p> AOF(append only file)策略，是基于操作日志实现的<br> 它的特点持久化的频率非常高了，默认每秒持久化1次。每一秒内将最新的<font color="red"><strong>写入与删除</strong></font>的命令进行持久化。</p>
+</blockquote>
+<p>AOF的持久化机制和RDB的持久化机制完全不同，AOF是基于日志文件操作的，简单点说就是RDB会将数据进行备份，而<font color="red"><strong>AOF备份的是操作</strong></font> , 就是说，AOF将你所有的<strong>写入和删除</strong>操作进行备份，当服务器宕机时，可以通过备份的操作还原数据。</p>
+<p>在配置文件中有这么一小段<br><img src="https://img-blog.csdnimg.cn/20200109200757357.jpg" alt><br>简单翻译下</p>
+<blockquote>
+<p>可以同时启用AOF和RDB持久性，没有问题。如果在启动时启用了AOF，那么Redis将加载AOF，即具有更好持久性保证的文件</p>
+</blockquote>
+<h6 id="开启AOF机制"><a href="#开启AOF机制" class="headerlink" title="开启AOF机制"></a>开启AOF机制</h6><p><img src="https://img-blog.csdnimg.cn/20200109200859573.jpg" alt="  "></p>
+<h5 id="AOF持久化选择"><a href="#AOF持久化选择" class="headerlink" title="AOF持久化选择"></a>AOF持久化选择</h5><p><img src="https://img-blog.csdnimg.cn/20200109201312398.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt=" "><br>简单翻译下</p>
+<blockquote>
+<p>默认设置是“每隔一秒”，因为这通常是正确的折衷<br>速度和数据安全。这取决于你是否能慢下来<br>“no”将允许操作系统在何时刷新输出缓冲区<br>为了更好的表现(但是如果你能接受一些数据丢失更多考虑的是快照的默认RDB持久性模式)，或者相反，使用“always”，虽然很慢，但是更安全。</p>
+</blockquote>
+<p>这里指的是AOF提供持久化的频率<br><img src="https://img-blog.csdnimg.cn/20200109201559103.jpg" alt="  "><br>always：指每次修改都进行持久化操作，效率是最低的，但也是最安全的。<br>everysec：指每秒持久化一次，默认使用<br>no：指的是不进行持久化，效率最高</p>
+<h5 id="AOF的重写机制"><a href="#AOF的重写机制" class="headerlink" title="AOF的重写机制"></a>AOF的重写机制</h5><p>当AOF开启时每秒的操作都会进行持久化，这样会导致日志文件的过大<br>于是AOF就有了重写机制，同样在配置文件下<br><img src="https://img-blog.csdnimg.cn/20200109203646265.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="  "></p>
+<p>简单翻译下</p>
+<blockquote>
+<p>这个基本大小与当前大小进行比较。如果当前大小大于指定的百分比，将触发重写。您需要为要重写的AOF文件指定一个最小的大小</p>
+</blockquote>
+<p><strong>默认当日志文件大小超过内存数据100%时触发重写<br>当日志文件达到64M时也触发重写</strong></p>
+<h3 id="关于AOF持久化机制"><a href="#关于AOF持久化机制" class="headerlink" title="关于AOF持久化机制"></a>关于AOF持久化机制</h3><p> AOF策略的优点是显而易见的， 每秒持久化，具有更高的数据安全，如果服务器崩溃只会丢1秒内的数据，但缺点也是一样明显：由于持久化频率高，Redis的性能会变低。</p>
+<p>值得注意的是AOF和RDB同时开启，默认使用AOF恢复数据，<br>因为AOF是秒级以内的容错。</p>
+<h4 id="关于两者的选用"><a href="#关于两者的选用" class="headerlink" title="关于两者的选用"></a>关于两者的选用</h4><h5 id="官方建议"><a href="#官方建议" class="headerlink" title="官方建议"></a>官方建议</h5><blockquote>
+<p>通常，如果你要想提供很高的数据保障性，那么建议你同时使用两种持久化方式。<br>如果你可以接受灾难带来的几分钟的数据丢失，那么你可以仅使用RDB。很多用户仅使用了AOF，但是我们建议，既然RDB可以时不时的给数据做个完整的快照，并且提供更快的重启，所以最好还是也使用RDB。<br>因此，我们希望可以在未来（长远计划）统一AOF和RDB成一种持久化模式。</p>
+</blockquote>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>关于Redis就讲到这里了<br>有空再更！！！！</p>
+<p><img src="https://img-blog.csdnimg.cn/2020010920475983.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" alt="    "></p>
 
             </div>
             <hr />
@@ -526,9 +742,9 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《SpringCloud-注册中心》
+                    《Redis笔记》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/17/springcloud-eureka/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/09/redis/" property="cc:attributionName"
                rel="cc:attributionURL">
                 juhaozero
             </a> 采用
@@ -569,7 +785,7 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
         repo: 'juhaozero.github.io',
         owner: 'juhaozero',
         admin: "juhaozero",
-        id: '2019/12/17/springcloud-eureka/',
+        id: '2020/01/09/redis/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -856,23 +1072,24 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/29/tong-yong-mapper/">
+                <a href="/2020/01/21/rabbitmq/">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/20200217165857149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="通用Mapper">
+                        <img src="https://img-blog.csdnimg.cn/20200121203917897.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="RabbitMQ笔记">
                         
-                        <span class="card-title">通用Mapper</span>
+                        <span class="card-title">RabbitMQ笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            通用 Mapper是什么在我们使用MyBatis中，我们需要写大量的SQL语句，包括最基本的一些增删改查，这些简单的SQL语句占用了大量的时间，却不得不写，这时我通用Mapper就出现了。通用Mapper是一个可以实现任意 MyBatis 
+                            什么是消息队列
+消息队列（英语：Message queue）是一种进程间通信或同一进程的不同线程间的通信方式，软件的贮列用来处理一系列的输入，通常是来自用户。消息队列提供了异步的通信协议，每一个贮列中的纪录包含详细说明的数据，包含发生的时间
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-29
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-21
                         </span>
                         <span class="publish-author">
                             
@@ -889,8 +1106,8 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQL/" target="_blank">
-                        <span class="chip bg-color">SQL</span>
+                    <a href="/tags/RabbitMQ/" target="_blank">
+                        <span class="chip bg-color">RabbitMQ</span>
                     </a>
                     
                 </div>
@@ -904,33 +1121,32 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/11/springcloud-yi/">
+                <a href="/2020/01/01/guan-yu-2020-nian/">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/20200109205959220.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NoZXJsb2NraW4=,size_16,color_FFFFFF,t_70" class="responsive-img" alt="SpringCloud--入门篇">
                         
-                        <span class="card-title">SpringCloud--入门篇</span>
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="关于2020年">
+                        
+                        <span class="card-title">关于2020年</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在看SpringCloud之前我们先来了解一下什么是微服务
-微服务维基百科上这样说
-
-微服务 (Microservices)是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块为基础，利用模块化的方式组合出复杂的大型应用程序，微服务
+                            写在前面最近在找工作，不知道是大环境的问题还是自身的问题，工作是越来越难找了，2019年抽空对之前学过的一些技术做了小小的总结，感觉自己还是一个小白，生活会越来越好吧！也说不定嘛！
+关于2020年希望就是可以快点找到工作咯！也对自己的负责！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="/categories/其他/" class="post-category" target="_blank">
+                                    其他
                                 </a>
                             
                             
@@ -940,12 +1156,8 @@ Eureka注册中心微服务的注册中心    服务提供者将服务注册到E
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/" target="_blank">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                    <a href="/tags/SpringCloud/" target="_blank">
-                        <span class="chip bg-color">SpringCloud</span>
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>

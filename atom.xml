@@ -44,6 +44,32 @@
   </entry>
   
   <entry>
+    <title>Redis笔记</title>
+    <link href="http://yoursite.com/2020/01/09/redis/"/>
+    <id>http://yoursite.com/2020/01/09/redis/</id>
+    <published>2020-01-08T16:00:00.000Z</published>
+    <updated>2020-01-21T13:08:58.346Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;传统DB的缺点&quot;&gt;&lt;a href=&quot;#传统DB的缺点&quot; class=&quot;headerlink&quot; title=&quot;传统DB的缺点&quot;&gt;&lt;/a&gt;传统DB的缺点&lt;/h2&gt;&lt;p&gt;像Mysql、和Oracle
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于2020年</title>
     <link href="http://yoursite.com/2020/01/01/guan-yu-2020-nian/"/>
     <id>http://yoursite.com/2020/01/01/guan-yu-2020-nian/</id>
@@ -92,6 +118,32 @@
     
     
       <category term="缓存" scheme="http://yoursite.com/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通用Mapper</title>
+    <link href="http://yoursite.com/2019/12/29/tong-yong-mapper/"/>
+    <id>http://yoursite.com/2019/12/29/tong-yong-mapper/</id>
+    <published>2019-12-28T16:00:00.000Z</published>
+    <updated>2020-02-17T09:24:47.338Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;通用-Mapper是什么&quot;&gt;&lt;a href=&quot;#通用-Mapper是什么&quot; class=&quot;headerlink&quot; title=&quot;通用 Mapper是什么&quot;&gt;&lt;/a&gt;通用
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="SQL" scheme="http://yoursite.com/tags/SQL/"/>
     
   </entry>
   

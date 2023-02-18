@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://juhaozero.github.io/posts/5fddf106.html</loc>
+    
+    <lastmod>2023-02-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://juhaozero.github.io/posts/4abc8450.html</loc>
     
     <lastmod>2023-02-18</lastmod>
@@ -116,6 +123,13 @@
   </url>
   
   <url>
+    <loc>https://juhaozero.github.io/tags/Git/</loc>
+    <lastmod>2023-02-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juhaozero.github.io/tags/Docker/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>daily</changefreq>
@@ -140,6 +154,13 @@
   
   <url>
     <loc>https://juhaozero.github.io/categories/Linux/</loc>
+    <lastmod>2023-02-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juhaozero.github.io/categories/Git/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

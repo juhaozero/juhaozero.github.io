@@ -6,7 +6,7 @@
   <link href="https://juhaozero.github.io/atom.xml" rel="self"/>
   
   <link href="https://juhaozero.github.io/"/>
-  <updated>2023-02-18T09:34:37.035Z</updated>
+  <updated>2023-02-19T14:49:44.463Z</updated>
   <id>https://juhaozero.github.io/</id>
   
   <author>
@@ -17,11 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nginx-命令.md</title>
+    <link href="https://juhaozero.github.io/posts/757444c7.html"/>
+    <id>https://juhaozero.github.io/posts/757444c7.html</id>
+    <published>2023-02-19T14:45:51.000Z</published>
+    <updated>2023-02-19T14:49:44.463Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Git 常用命令</title>
     <link href="https://juhaozero.github.io/posts/5fddf106.html"/>
     <id>https://juhaozero.github.io/posts/5fddf106.html</id>
     <published>2021-08-12T12:26:01.000Z</published>
-    <updated>2023-02-18T09:34:37.035Z</updated>
+    <updated>2023-02-19T14:53:47.018Z</updated>
     
     
       
@@ -49,7 +62,7 @@
     <link href="https://juhaozero.github.io/posts/59b529b7.html"/>
     <id>https://juhaozero.github.io/posts/59b529b7.html</id>
     <published>2021-07-13T01:14:20.000Z</published>
-    <updated>2023-02-18T08:52:56.007Z</updated>
+    <updated>2023-02-19T14:53:11.577Z</updated>
     
     
       

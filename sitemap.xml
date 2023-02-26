@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://juhaozero.github.io/posts/705c1a66.html</loc>
+    
+    <lastmod>2023-02-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juhaozero.github.io/posts/59b529b7.html</loc>
+    
+    <lastmod>2023-02-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://juhaozero.github.io/posts/f79446df.html</loc>
+    
+    <lastmod>2023-02-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://juhaozero.github.io/posts/5fddf106.html</loc>
     
     <lastmod>2023-02-26</lastmod>
@@ -12,27 +33,6 @@
     <loc>https://juhaozero.github.io/posts/705c1a66.html</loc>
     
     <lastmod>2023-02-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juhaozero.github.io/posts/705c1a66.html</loc>
-    
-    <lastmod>2023-02-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juhaozero.github.io/posts/757444c7.html</loc>
-    
-    <lastmod>2023-02-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://juhaozero.github.io/posts/59b529b7.html</loc>
-    
-    <lastmod>2023-02-19</lastmod>
     
   </url>
   
@@ -180,6 +180,13 @@
   
   <url>
     <loc>https://juhaozero.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <lastmod>2023-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juhaozero.github.io/tags/nginx/</loc>
     <lastmod>2023-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
